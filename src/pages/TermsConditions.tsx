@@ -5,6 +5,22 @@ import logo from "../assets/logo.png";
 export default function TermsConditions() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = "Terms & Conditions — LightChat";
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute(
+        "content",
+        "Read the terms and conditions for using LightChat, our Instagram chat marketing automation platform."
+      );
+    return () => {
+      document.title = "LightChat — Engage at the Speed of Light";
+      document
+        .querySelector('meta[name="description"]')
+        ?.setAttribute(
+          "content",
+          "Drive more sales and conversions on Instagram using chat automation. Automate DMs, build visual flows, and convert followers into customers."
+        );
+    };
   }, []);
 
   return (
@@ -13,9 +29,9 @@ export default function TermsConditions() {
       <nav className="sticky top-0 z-50 bg-surface-950/80 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5">
-            <img src={logo} alt="Content Track" className="h-8 w-8" />
+            <img src={logo} alt="LightChat" className="h-8 w-8" />
             <span className="text-lg font-bold tracking-tight">
-              Content Track
+              LightChat
             </span>
           </Link>
           <Link
@@ -60,7 +76,7 @@ export default function TermsConditions() {
               1. Acceptance of Terms
             </h2>
             <p>
-              By accessing or using Content Track ("the Service"), you agree to
+              By accessing or using LightChat ("the Service"), you agree to
               be bound by these Terms & Conditions ("Terms"). If you do not agree
               to these Terms, you may not use the Service. These Terms constitute
               a legally binding agreement between you ("User," "you") and Content
@@ -73,7 +89,7 @@ export default function TermsConditions() {
               2. Description of Service
             </h2>
             <p>
-              Content Track is a web-based platform that provides Instagram
+              LightChat is a web-based platform that provides Instagram
               content moderation and automation tools, including automated
               comment filtering, direct message auto-reply, activity analytics,
               and multi-account management. The Service operates through
@@ -115,7 +131,7 @@ export default function TermsConditions() {
             <p>
               The Service requires you to connect one or more Instagram Business
               or Creator accounts via Meta's OAuth flow. By connecting your
-              account, you authorize Content Track to access and interact with
+              account, you authorize LightChat to access and interact with
               your Instagram data as described in our{" "}
               <Link to="/privacy" className="text-brand-400 hover:underline">
                 Privacy Policy
@@ -168,7 +184,7 @@ export default function TermsConditions() {
               7. Subscription & Billing
             </h2>
             <p>
-              Content Track offers free and paid subscription plans. Paid plans
+              LightChat offers free and paid subscription plans. Paid plans
               are billed on a monthly basis. By subscribing to a paid plan, you
               authorize us to charge your payment method on a recurring basis
               until you cancel. You may cancel your subscription at any time;
@@ -187,7 +203,7 @@ export default function TermsConditions() {
               8. Content Moderation Disclaimer
             </h2>
             <p>
-              Content Track's moderation tools operate based on keyword filters
+              LightChat's moderation tools operate based on keyword filters
               and rules that you configure. We do not guarantee that all unwanted
               content will be detected or that legitimate content will never be
               incorrectly flagged. You are solely responsible for configuring
@@ -203,7 +219,7 @@ export default function TermsConditions() {
             </h2>
             <p>
               The Service, including its design, code, features, graphics, and
-              documentation, is owned by Content Track and protected by
+              documentation, is owned by LightChat and protected by
               intellectual property laws. You are granted a limited,
               non-exclusive, non-transferable license to use the Service in
               accordance with these Terms. You retain ownership of all content on
@@ -231,7 +247,7 @@ export default function TermsConditions() {
               11. Limitation of Liability
             </h2>
             <p>
-              To the maximum extent permitted by law, Content Track and its
+              To the maximum extent permitted by law, LightChat and its
               officers, directors, employees, and agents shall not be liable for
               any indirect, incidental, special, consequential, or punitive
               damages, including loss of profits, data, business opportunities,
@@ -264,7 +280,7 @@ export default function TermsConditions() {
               13. Indemnification
             </h2>
             <p>
-              You agree to indemnify and hold harmless Content Track and its
+              You agree to indemnify and hold harmless LightChat and its
               affiliates from any claims, damages, losses, liabilities, costs,
               and expenses (including legal fees) arising from your use of the
               Service, your violation of these Terms, or your violation of any
@@ -306,7 +322,7 @@ export default function TermsConditions() {
             </h2>
             <p>
               These Terms shall be governed by and construed in accordance with
-              the laws of the jurisdiction in which Content Track operates,
+              the laws of the jurisdiction in which LightChat operates,
               without regard to conflict of law provisions. Any disputes arising
               from these Terms or the Service shall be resolved through binding
               arbitration or in the courts of the applicable jurisdiction.
@@ -317,7 +333,7 @@ export default function TermsConditions() {
             <h2 className="text-white text-xl font-semibold">17. Contact</h2>
             <p>
               For questions about these Terms, contact us at{" "}
-              <span className="text-brand-400">legal@contenttrack.io</span>.
+              <span className="text-brand-400">legal@lightchats.com</span>.
             </p>
           </section>
         </div>
@@ -327,7 +343,7 @@ export default function TermsConditions() {
       <footer className="border-t border-white/5 py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-surface-600">
-            &copy; {new Date().getFullYear()} Content Track. All rights
+            &copy; {new Date().getFullYear()} LightChat. All rights
             reserved.
           </div>
           <div className="flex items-center gap-6 text-sm text-surface-500">

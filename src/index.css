@@ -40,6 +40,151 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ── Animated grid background ── */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Glowing orbs ── */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+.orb-1 {
+  width: 700px;
+  height: 700px;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(233,77,30,0.15) 0%, transparent 70%);
+  animation: orbFloat1 8s ease-in-out infinite;
+}
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -10%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(237,105,62,0.06) 0%, transparent 70%);
+  animation: orbFloat2 10s ease-in-out infinite;
+}
+.orb-3 {
+  width: 350px;
+  height: 350px;
+  top: 40%;
+  right: -8%;
+  background: radial-gradient(circle, rgba(233,77,30,0.05) 0%, transparent 70%);
+  animation: orbFloat3 12s ease-in-out infinite;
+}
+
+/* ── Floating particles ── */
+.particles-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: var(--color-brand-500);
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFloat linear infinite;
+}
+
+/* ── Chat bubble animations ── */
+@keyframes bubbleFloat1 {
+  0% { opacity: 0; transform: translateY(40px) scale(0.7) rotate(-5deg); }
+  15% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+  85% { opacity: 1; transform: translateY(-8px) scale(1) rotate(1deg); }
+  100% { opacity: 0; transform: translateY(-20px) scale(0.9) rotate(3deg); }
+}
+@keyframes bubbleFloat2 {
+  0% { opacity: 0; transform: translateX(-30px) scale(0.7) rotate(3deg); }
+  15% { opacity: 1; transform: translateX(0) scale(1) rotate(0deg); }
+  85% { opacity: 1; transform: translateX(5px) scale(1) rotate(-1deg); }
+  100% { opacity: 0; transform: translateX(15px) scale(0.9) rotate(-3deg); }
+}
+@keyframes bubbleFloat3 {
+  0% { opacity: 0; transform: translateY(30px) translateX(20px) scale(0.7); }
+  15% { opacity: 1; transform: translateY(0) translateX(0) scale(1); }
+  85% { opacity: 1; transform: translateY(-10px) translateX(-5px) scale(1); }
+  100% { opacity: 0; transform: translateY(-25px) translateX(-10px) scale(0.9); }
+}
+@keyframes bubblePop {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1.1); }
+  70% { transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes bubbleHover {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.chat-bubble {
+  animation: bubblePop 0.5s ease-out forwards, bubbleHover 3s ease-in-out 0.5s infinite;
+  opacity: 0;
+}
+.chat-bubble-1 { animation-delay: 0.3s, 0.8s; }
+.chat-bubble-2 { animation-delay: 0.8s, 1.3s; }
+.chat-bubble-3 { animation-delay: 1.3s, 1.8s; }
+.chat-bubble-4 { animation-delay: 1.8s, 2.3s; }
+.chat-bubble-5 { animation-delay: 2.3s, 2.8s; }
+
+/* ── Phone mockup ── */
+.phone-mockup {
+  position: relative;
+  width: 377px;
+  aspect-ratio: 9 / 16;
+  border-radius: 40px;
+  background: #1a1a1a;
+  padding: 10px;
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.08),
+    0 25px 80px rgba(0,0,0,0.5),
+    0 0 60px rgba(233,77,30,0.08);
+}
+.phone-mockup::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 24px;
+  background: #0a0a0a;
+  border-radius: 0 0 16px 16px;
+  z-index: 10;
+}
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #000;
+}
+.phone-screen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── General animations ── */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -55,23 +200,73 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fade-in-down {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes pulse-ring {
   0% { transform: scale(1); opacity: 0.4; }
   100% { transform: scale(1.5); opacity: 0; }
 }
 
+@keyframes orbFloat1 {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(30px); }
+}
+@keyframes orbFloat2 {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-40px) translateX(20px); }
+}
+@keyframes orbFloat3 {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(25px) translateX(-15px); }
+}
+@keyframes particleFloat {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  10% { opacity: 0.5; }
+  90% { opacity: 0.5; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+@keyframes pingRing {
+  0% { transform: scale(1); opacity: 0.6; }
+  75%, 100% { transform: scale(2.2); opacity: 0; }
+}
+
 .animate-marquee {
   animation: marquee 30s linear infinite;
 }
-
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
-
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out both;
 }
+.animate-fade-in-down {
+  animation: fade-in-down 0.8s ease-out both;
+}
 
+.animation-delay-100 { animation-delay: 0.1s; }
 .animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
 .animation-delay-400 { animation-delay: 0.4s; }
 .animation-delay-600 { animation-delay: 0.6s; }
+.animation-delay-800 { animation-delay: 0.8s; }
+
+/* ── Scroll-triggered reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .phone-mockup {
+    width: 220px;
+  }
+}

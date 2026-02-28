@@ -5,6 +5,22 @@ import logo from "../assets/logo.png";
 export default function PrivacyPolicy() {
   useEffect(() => {
     window.scrollTo(0, 0);
+    document.title = "Privacy Policy — LightChat";
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute(
+        "content",
+        "Learn how LightChat collects, uses, and protects your data. Read our full privacy policy."
+      );
+    return () => {
+      document.title = "LightChat — Engage at the Speed of Light";
+      document
+        .querySelector('meta[name="description"]')
+        ?.setAttribute(
+          "content",
+          "Drive more sales and conversions on Instagram using chat automation. Automate DMs, build visual flows, and convert followers into customers."
+        );
+    };
   }, []);
 
   return (
@@ -13,9 +29,9 @@ export default function PrivacyPolicy() {
       <nav className="sticky top-0 z-50 bg-surface-950/80 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5">
-            <img src={logo} alt="Content Track" className="h-8 w-8" />
+            <img src={logo} alt="LightChat" className="h-8 w-8" />
             <span className="text-lg font-bold tracking-tight">
-              Content Track
+              LightChat
             </span>
           </Link>
           <Link
@@ -56,7 +72,7 @@ export default function PrivacyPolicy() {
           <section className="space-y-3">
             <h2 className="text-white text-xl font-semibold">1. Introduction</h2>
             <p>
-              Content Track ("we," "our," or "us") is committed to protecting
+              LightChat ("we," "our," or "us") is committed to protecting
               your privacy. This Privacy Policy explains how we collect, use,
               disclose, and safeguard your information when you use our web
               application and related services (collectively, the "Service").
@@ -149,7 +165,7 @@ export default function PrivacyPolicy() {
               </li>
               <li>
                 <span className="text-white">Safety:</span> To protect the
-                rights, property, or safety of Content Track, our users, or the
+                rights, property, or safety of LightChat, our users, or the
                 public
               </li>
               <li>
@@ -168,7 +184,7 @@ export default function PrivacyPolicy() {
               Instagram's API Terms of Use. We only request permissions necessary
               to provide the Service. Access tokens are stored securely and are
               never shared with third parties. You can revoke access at any time
-              by disconnecting your account from Content Track or through your
+              by disconnecting your account from LightChat or through your
               Instagram settings.
             </p>
           </section>
@@ -215,7 +231,7 @@ export default function PrivacyPolicy() {
             </ul>
             <p>
               To exercise these rights, contact us at{" "}
-              <span className="text-brand-400">privacy@contenttrack.io</span>.
+              <span className="text-brand-400">privacy@lightchats.com</span>.
             </p>
           </section>
 
@@ -257,7 +273,7 @@ export default function PrivacyPolicy() {
             <p>
               If you have questions or concerns about this Privacy Policy, please
               contact us at{" "}
-              <span className="text-brand-400">privacy@contenttrack.io</span>.
+              <span className="text-brand-400">privacy@lightchats.com</span>.
             </p>
           </section>
         </div>
@@ -267,7 +283,7 @@ export default function PrivacyPolicy() {
       <footer className="border-t border-white/5 py-8">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-surface-600">
-            &copy; {new Date().getFullYear()} Content Track. All rights
+            &copy; {new Date().getFullYear()} LightChat. All rights
             reserved.
           </div>
           <div className="flex items-center gap-6 text-sm text-surface-500">
