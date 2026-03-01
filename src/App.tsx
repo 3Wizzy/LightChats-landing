@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import logo from "./assets/logo.png";
 
-const APP_URL = "https://app.lightchats.com/";
+// const APP_URL = "https://app.lightchats.com/";
+const APP_URL = "https://lightchats.com/";
 
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);

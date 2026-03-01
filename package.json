@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "scp -r ./dist root@64.23.177.94:/var/www/contenttrak-landing/",
+    "light": "scp -r ./dist root@64.23.177.94:/var/www/coming-soon/",
     "soon": "scp -r ./coming-soon.html root@64.23.177.94:/var/www/coming-soon/index.html"
 
   },
