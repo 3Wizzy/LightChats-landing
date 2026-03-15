@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "./assets/logo.png";
 
 // const APP_URL = "https://app.lightchats.com/";
-const APP_URL = "https://lightchats.com/";
+const APP_URL = "https://app.lightchats.com/";
 
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -87,6 +87,9 @@ function App() {
             <a href="#pricing" className="hover:text-white transition-colors">
               Pricing
             </a>
+            <a href="#partner" className="hover:text-white transition-colors">
+              Partner
+            </a>
             <a href="#faq" className="hover:text-white transition-colors">
               FAQ
             </a>
@@ -159,6 +162,13 @@ function App() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Pricing
+            </a>
+            <a
+              href="#partner"
+              className="block text-surface-300 hover:text-white py-2"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Partner
             </a>
             <a
               href="#faq"
@@ -576,7 +586,7 @@ function App() {
             ].map((item, i) => (
               <RevealSection key={item.step}>
                 <div className="relative text-center md:text-left">
-                  <div className="text-6xl md:text-7xl font-black text-brand-500/10 mb-4 leading-none">
+                  <div className="text-6xl md:text-7xl font-black text-brand-500/25 mb-4 leading-none">
                     {item.step}
                   </div>
                   <h3 className="text-xl font-bold mb-3">{item.title}</h3>
@@ -632,47 +642,50 @@ function App() {
               {
                 name: "Free",
                 price: "$0",
-                period: "forever",
+                period: "/month",
                 desc: "Perfect to get started",
                 features: [
-                  "1 Instagram account",
-                  "50 messages/day",
-                  "Basic auto-replies",
-                  "7-day analytics",
+                  "50 AI replies/month",
+                  "200 static replies/month",
+                  "Comment & DM auto-reply",
+                  "Basic flow automations",
+                  "Contact management",
                 ],
-                cta: "Get Started",
+                cta: "Get Started Free",
+                ctaLink: "https://app.lightchats.com/signup",
                 highlight: false,
               },
               {
                 name: "Pro",
-                price: "$19",
+                price: "$9",
                 period: "/month",
-                desc: "For growing creators",
+                desc: "For growing creators & businesses",
                 features: [
-                  "5 Instagram accounts",
-                  "Unlimited messages",
-                  "Visual flow builder",
-                  "AI smart replies",
-                  "Advanced analytics",
-                  "Priority support",
+                  "500 AI replies/month",
+                  "2,000 static replies/month",
+                  "All triggers unlocked",
+                  "AI conversations & ask-for actions",
+                  "Conditions & branching",
+                  "Custom contact groups",
                 ],
-                cta: "Start Free Trial",
+                cta: "Upgrade to Pro",
+                ctaLink: "https://app.lightchats.com/billing",
                 highlight: true,
               },
               {
-                name: "Team",
-                price: "$49",
-                period: "/month",
-                desc: "For agencies & teams",
+                name: "Agency",
+                price: "Custom",
+                period: "",
+                desc: "For agencies & large teams",
                 features: [
-                  "Unlimited accounts",
-                  "Everything in Pro",
-                  "Team collaboration",
-                  "Custom integrations",
-                  "API access",
+                  "Unlimited AI replies",
+                  "Unlimited static replies",
+                  "All features unlocked",
                   "Dedicated support",
+                  "Custom onboarding",
                 ],
-                cta: "Contact Sales",
+                cta: "Contact Us",
+                ctaLink: "mailto:contact@lightchats.com",
                 highlight: false,
               },
             ].map((plan) => (
@@ -697,9 +710,11 @@ function App() {
                     <span className="text-4xl font-extrabold">
                       {plan.price}
                     </span>
-                    <span className="text-surface-500 text-sm">
-                      {plan.period}
-                    </span>
+                    {plan.period && (
+                      <span className="text-surface-500 text-sm">
+                        {plan.period}
+                      </span>
+                    )}
                   </div>
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((f) => (
@@ -725,7 +740,7 @@ function App() {
                     ))}
                   </ul>
                   <a
-                    href={APP_URL}
+                    href={plan.ctaLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`block text-center font-semibold py-3 rounded-full transition-all ${
@@ -740,6 +755,101 @@ function App() {
               </RevealSection>
             ))}
           </div>
+
+          {/* Auto Top-up note */}
+          <RevealSection>
+            <div className="mt-10 text-center">
+              <p className="text-surface-500 text-sm">
+                Need more replies? Auto top-up adds extra capacity for just{" "}
+                <span className="text-white font-medium">$4.90</span> when you
+                hit your limit. No interruptions, no missed engagements.
+              </p>
+            </div>
+          </RevealSection>
+        </div>
+      </section>
+
+      {/* ─── Partner Program ─── */}
+      <section id="partner" className="py-20 md:py-32 relative z-10">
+        <div className="max-w-5xl mx-auto px-6">
+          <RevealSection>
+            <div className="relative rounded-3xl bg-gradient-to-br from-brand-500/10 via-surface-900 to-surface-900 border border-brand-500/20 overflow-hidden">
+              <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-brand-500/5 blur-[120px] rounded-full pointer-events-none" />
+              <div className="grid md:grid-cols-2 gap-10 p-10 md:p-14 relative">
+                <div>
+                  <span className="text-brand-400 text-sm font-semibold uppercase tracking-widest">
+                    Partner Program
+                  </span>
+                  <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-6 leading-tight">
+                    Earn <span className="text-brand-400">20%</span> Recurring
+                    Commission
+                  </h2>
+                  <p className="text-surface-400 text-lg leading-relaxed mb-8">
+                    Refer creators and businesses to LightChats and earn 20% of
+                    every subscription payment they make — month after month, for
+                    as long as they stay subscribed.
+                  </p>
+                  <a
+                    href="https://partners.lightchats.com/signup"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-600 text-white font-semibold px-7 py-3.5 rounded-full transition-all hover:shadow-[0_0_30px_rgba(233,77,30,0.3)]"
+                  >
+                    Become a Partner
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <div className="space-y-5">
+                  {[
+                    {
+                      step: "1",
+                      title: "Sign up as a partner",
+                      desc: "Create your free partner account and get your unique referral link.",
+                    },
+                    {
+                      step: "2",
+                      title: "Share with your audience",
+                      desc: "Promote LightChats to your followers, subscribers, or clients.",
+                    },
+                    {
+                      step: "3",
+                      title: "Earn every month",
+                      desc: "Get 20% of every payment your referrals make. For life.",
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.step}
+                      className="flex gap-4 items-start bg-white/[0.03] border border-white/5 rounded-xl p-5"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-brand-500/20 flex items-center justify-center flex-shrink-0 text-brand-400 font-bold text-sm">
+                        {item.step}
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-white text-sm">
+                          {item.title}
+                        </h4>
+                        <p className="text-surface-400 text-sm mt-1">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </RevealSection>
         </div>
       </section>
 
@@ -777,7 +887,7 @@ function App() {
               },
               {
                 q: "What happens when I reach my plan limit?",
-                a: "You'll get notified as you approach your limit. Automation pauses until the next billing cycle or you can upgrade your plan instantly.",
+                a: "If you have a saved card, auto top-up kicks in — $4.90 adds extra replies instantly so you never miss an engagement. No card on file? Replies pause until your limits reset next month, or you can upgrade anytime.",
               },
             ].map((faq) => (
               <FAQItem key={faq.q} question={faq.q} answer={faq.a} />
