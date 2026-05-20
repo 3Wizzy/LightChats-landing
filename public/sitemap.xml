@@ -1,21 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://lightchats.com/</loc>
-    <lastmod>2026-02-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/" />
+    <lastmod>2026-04-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://lightchats.com/privacy</loc>
-    <lastmod>2026-02-28</lastmod>
+    <loc>https://lightchats.com/features</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/features" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/features" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/features" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/features" />
+    <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/pricing</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/pricing" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/pricing" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/pricing" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/pricing" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/affiliates</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/affiliates" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/affiliates" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/affiliates" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/affiliates" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/about</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/about" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/about" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/about" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/blog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/blog" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/blog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/blog" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/blog/announcing-lightchats</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/blog/announcing-lightchats" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/blog/announcing-lightchats" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/blog/announcing-lightchats" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/blog/announcing-lightchats" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/changelog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/changelog" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/changelog" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/changelog" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/changelog" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/help</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/help" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/help" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/help" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/help" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/support</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/support" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/support" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/support" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/support" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/security</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/security" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/security" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/security" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/security" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/compare/manychat</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/compare/manychat" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/compare/manychat" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/compare/manychat" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/compare/manychat" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/compare/respond-io</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/compare/respond-io" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/compare/respond-io" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/compare/respond-io" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/compare/respond-io" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/ai-disclosure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/ai-disclosure" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/ai-disclosure" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/ai-disclosure" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/ai-disclosure" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/data-deletion</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/data-deletion" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/data-deletion" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/data-deletion" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/data-deletion" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://lightchats.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/privacy" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/privacy" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://lightchats.com/terms</loc>
-    <lastmod>2026-02-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lightchats.com/terms" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://lightchats.com/fr/terms" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://lightchats.com/ar/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lightchats.com/terms" />
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 </urlset>

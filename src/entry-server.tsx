@@ -1,9 +1,10 @@
 import { StrictMode } from 'react'
-import { hydrateRoot, createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './index.css'
+import { renderToString } from 'react-dom/server'
+import { StaticRouter } from 'react-router'
+import { Routes, Route } from 'react-router-dom'
 import { LanguageProvider } from './i18n/LanguageContext'
-import { BASE_PATHS } from './i18n/routes'
+import { BASE_PATHS, SUPPORTED_LANGS } from './i18n/routes'
+import { routeMeta as localizedRouteMeta } from './i18n/meta'
 import App from './App.tsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx'
 import TermsConditions from './pages/TermsConditions.tsx'
@@ -47,30 +48,36 @@ function buildRoutes() {
   for (const base of BASE_PATHS) {
     const el = ELEMENTS[base]
     out.push(<Route key={base} path={base} element={el} />)
-    // French
     const fr = base === '/' ? '/fr' : `/fr${base}`
     out.push(<Route key={fr} path={fr} element={el} />)
-    // Arabic
     const ar = base === '/' ? '/ar' : `/ar${base}`
     out.push(<Route key={ar} path={ar} element={el} />)
   }
   return out
 }
 
-const app = (
-  <StrictMode>
-    <BrowserRouter>
-      <LanguageProvider>
-        <Routes>{buildRoutes()}</Routes>
-      </LanguageProvider>
-    </BrowserRouter>
-  </StrictMode>
-)
+/** Build the full list of (url, lang, basePath) tuples to prerender. */
+export function listLocalizedRoutes(): Array<{ url: string; lang: 'en' | 'fr' | 'ar'; basePath: string }> {
+  const out: Array<{ url: string; lang: 'en' | 'fr' | 'ar'; basePath: string }> = []
+  for (const base of BASE_PATHS) {
+    for (const lang of SUPPORTED_LANGS) {
+      const url = lang === 'en' ? base : base === '/' ? `/${lang}` : `/${lang}${base}`
+      out.push({ url, lang, basePath: base })
+    }
+  }
+  return out
+}
 
-const rootEl = document.getElementById('root')!
+export const routeMeta = localizedRouteMeta
 
-if (rootEl.innerHTML.trim()) {
-  hydrateRoot(rootEl, app)
-} else {
-  createRoot(rootEl).render(app)
+export function render(url: string) {
+  return renderToString(
+    <StrictMode>
+      <StaticRouter location={url}>
+        <LanguageProvider>
+          <Routes>{buildRoutes()}</Routes>
+        </LanguageProvider>
+      </StaticRouter>
+    </StrictMode>
+  )
 }

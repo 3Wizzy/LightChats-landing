@@ -5,12 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node prerender.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "scp -r ./dist root@64.23.177.94:/var/www/contenttrak-landing/",
-    "light": "scp -r ./dist root@64.23.177.94:/var/www/coming-soon/",
-    "soon": "scp -r ./coming-soon.html root@64.23.177.94:/var/www/coming-soon/index.html"
+    "light": "scp -r ./dist root@204.168.184.142:/var/www/landing/"
 
   },
   "dependencies": {
