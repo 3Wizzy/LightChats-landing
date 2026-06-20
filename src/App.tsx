@@ -589,9 +589,11 @@ function App() {
                       <li
                         key={f.text}
                         className={`flex items-center gap-2 text-sm ${
-                          f.type === "x"
-                            ? "text-surface-500"
-                            : "text-surface-300"
+                          f.highlight
+                            ? "text-white font-semibold bg-brand-500/10 ring-1 ring-brand-500/25 rounded-lg px-2.5 py-2 -mx-1"
+                            : f.type === "x"
+                              ? "text-surface-500"
+                              : "text-surface-300"
                         }`}
                       >
                         {f.type === "check" && (

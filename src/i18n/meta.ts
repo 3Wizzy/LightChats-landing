@@ -34,7 +34,7 @@ export const routeMeta: Record<Lang, Record<string, RouteMeta>> = {
     "/pricing": {
       title: "Pricing — LightChats",
       description:
-        "Simple, transparent pricing for LightChats. Free, Pro ($9/mo) and Agency ($29/mo) plans, with auto top-ups, annual savings up to 27%, and a 30% recurring affiliate program.",
+        "Simple, transparent pricing for LightChats. Free, Pro ($9/mo) and Business ($29/mo) plans, with auto top-ups, annual savings up to 27%, and a 30% recurring affiliate program.",
       breadcrumbLabel: "Pricing",
     },
     "/data-deletion": {
@@ -70,7 +70,7 @@ export const routeMeta: Record<Lang, Record<string, RouteMeta>> = {
     "/blog/announcing-lightchats": {
       title: "Announcing LightChats — Instagram chat automation, done right",
       description:
-        "Why we built another Instagram automation tool, what we shipped on day one (Free / Pro $9 / Agency $29), what we said no to, and what's on the roadmap for 2026.",
+        "Why we built another Instagram automation tool, what we shipped on day one (Free / Pro $9 / Business $29), what we said no to, and what's on the roadmap for 2026.",
       breadcrumbLabel: "Announcing LightChats",
     },
     "/affiliates": {
@@ -137,7 +137,7 @@ export const routeMeta: Record<Lang, Record<string, RouteMeta>> = {
     "/pricing": {
       title: "Tarifs — LightChats",
       description:
-        "Tarification simple et transparente. Forfaits Gratuit, Pro (9 $/mois) et Agence (29 $/mois), recharges automatiques, jusqu'à 27 % d'économies en annuel et un programme d'affiliation à 30 % récurrent.",
+        "Tarification simple et transparente. Forfaits Gratuit, Pro (9 $/mois) et Business (29 $/mois), recharges automatiques, jusqu'à 27 % d'économies en annuel et un programme d'affiliation à 30 % récurrent.",
       breadcrumbLabel: "Tarifs",
     },
     "/data-deletion": {
@@ -173,7 +173,7 @@ export const routeMeta: Record<Lang, Record<string, RouteMeta>> = {
     "/blog/announcing-lightchats": {
       title: "Présentation de LightChats — l'automatisation Instagram, bien faite",
       description:
-        "Pourquoi nous avons créé un nouvel outil d'automatisation Instagram, ce que nous avons livré dès le jour 1 (Gratuit / Pro 9 $ / Agence 29 $), nos refus, et notre feuille de route 2026.",
+        "Pourquoi nous avons créé un nouvel outil d'automatisation Instagram, ce que nous avons livré dès le jour 1 (Gratuit / Pro 9 $ / Business 29 $), nos refus, et notre feuille de route 2026.",
       breadcrumbLabel: "Présentation de LightChats",
     },
     "/affiliates": {
@@ -240,7 +240,7 @@ export const routeMeta: Record<Lang, Record<string, RouteMeta>> = {
     "/pricing": {
       title: "الأسعار — LightChats",
       description:
-        "تسعير بسيط وشفاف من LightChats. باقات مجانية وPro (9$/شهر) وAgency (29$/شهر) مع إعادة شحن تلقائية، توفير سنوي يصل إلى 27٪، وبرنامج إحالة بنسبة 30٪ متكرر.",
+        "تسعير بسيط وشفاف من LightChats. باقات مجانية وPro (9$/شهر) وBusiness (29$/شهر) مع إعادة شحن تلقائية، توفير سنوي يصل إلى 27٪، وبرنامج إحالة بنسبة 30٪ متكرر.",
       breadcrumbLabel: "الأسعار",
     },
     "/data-deletion": {
@@ -276,7 +276,7 @@ export const routeMeta: Record<Lang, Record<string, RouteMeta>> = {
     "/blog/announcing-lightchats": {
       title: "إطلاق LightChats — أتمتة محادثات إنستغرام كما يجب أن تكون",
       description:
-        "لماذا بنينا أداة أتمتة جديدة لإنستغرام، وما أطلقناه في اليوم الأول (مجاني / Pro بـ 9$ / Agency بـ 29$)، وما رفضناه، وما خارطة طريق 2026.",
+        "لماذا بنينا أداة أتمتة جديدة لإنستغرام، وما أطلقناه في اليوم الأول (مجاني / Pro بـ 9$ / Business بـ 29$)، وما رفضناه، وما خارطة طريق 2026.",
       breadcrumbLabel: "إطلاق LightChats",
     },
     "/affiliates": {

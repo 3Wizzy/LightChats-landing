@@ -40,15 +40,15 @@ interface HomeContent {
   pricingSub: string;
   pricingFree: string;
   pricingFreeDesc: string;
-  pricingFreeBullets: { text: string; type: "check" | "x" | "dollar" }[];
+  pricingFreeBullets: { text: string; type: "check" | "x" | "dollar"; highlight?: boolean }[];
   pricingFreeCta: string;
   pricingPro: string;
   pricingProDesc: string;
-  pricingProBullets: { text: string; type: "check" | "x" | "dollar" }[];
+  pricingProBullets: { text: string; type: "check" | "x" | "dollar"; highlight?: boolean }[];
   pricingProCta: string;
   pricingAgency: string;
   pricingAgencyDesc: string;
-  pricingAgencyBullets: { text: string; type: "check" | "x" | "dollar" }[];
+  pricingAgencyBullets: { text: string; type: "check" | "x" | "dollar"; highlight?: boolean }[];
   pricingAgencyCta: string;
   mostPopular: string;
   perMonth: string;
@@ -183,8 +183,8 @@ export const home: Record<Lang, HomeContent> = {
     pricingFree: "Free",
     pricingFreeDesc: "Perfect to get started",
     pricingFreeBullets: [
+      { text: "1,000 static replies/month", type: "check", highlight: true },
       { text: "150 AI replies/month", type: "check" },
-      { text: "1,000 static replies/month", type: "check" },
       { text: "Basic features only", type: "x" },
       { text: '"Sent via LightChats" signature on DMs', type: "x" },
     ],
@@ -192,8 +192,8 @@ export const home: Record<Lang, HomeContent> = {
     pricingPro: "Pro",
     pricingProDesc: "For growing creators & businesses",
     pricingProBullets: [
+      { text: "5,000 static replies/month", type: "check", highlight: true },
       { text: "750 AI replies/month", type: "check" },
-      { text: "3,000 static replies/month", type: "check" },
       {
         text: "Auto top-up at $4.90 (+250 AI, +1,000 static)",
         type: "dollar",
@@ -202,11 +202,11 @@ export const home: Record<Lang, HomeContent> = {
       { text: "No LightChats branding on DMs", type: "check" },
     ],
     pricingProCta: "Upgrade to Pro",
-    pricingAgency: "Agency",
-    pricingAgencyDesc: "For agencies & large teams",
+    pricingAgency: "Business",
+    pricingAgencyDesc: "For high-volume creators & teams",
     pricingAgencyBullets: [
+      { text: "20,000 static replies/month", type: "check", highlight: true },
       { text: "5,000 AI replies/month", type: "check" },
-      { text: "20,000 static replies/month", type: "check" },
       {
         text: "Auto top-up at $14.90 (+2,000 AI, +8,000 static)",
         type: "dollar",
@@ -214,7 +214,7 @@ export const home: Record<Lang, HomeContent> = {
       { text: "All features unlocked", type: "check" },
       { text: "No LightChats branding on DMs", type: "check" },
     ],
-    pricingAgencyCta: "Choose Agency",
+    pricingAgencyCta: "Choose Business",
     mostPopular: "Most Popular",
     perMonth: "/month",
     seeFullPricing: "See full pricing details",
@@ -270,7 +270,7 @@ export const home: Record<Lang, HomeContent> = {
       },
       {
         q: "What happens when I reach my plan limit?",
-        a: "On Pro and Agency, auto top-up kicks in if you have a saved card — $4.90 (Pro) or $14.90 (Agency) adds extra replies instantly, capped at 2 charges/month by default (configurable 0–20 in Billing). On Free, replies pause until the 1st of next month — you'll see a Pro upsell, never a surprise charge.",
+        a: "On Pro and Business, auto top-up kicks in if you have a saved card — $4.90 (Pro) or $14.90 (Business) adds extra replies instantly, capped at 2 charges/month by default (configurable 0–20 in Billing). On Free, replies pause until the 1st of next month — you'll see a Pro upsell, never a surprise charge.",
       },
     ],
     ctaTitle: "Ready to grow with chat?",
@@ -381,8 +381,8 @@ export const home: Record<Lang, HomeContent> = {
     pricingFree: "Gratuit",
     pricingFreeDesc: "Parfait pour démarrer",
     pricingFreeBullets: [
+      { text: "1 000 réponses statiques/mois", type: "check", highlight: true },
       { text: "150 réponses IA/mois", type: "check" },
-      { text: "1 000 réponses statiques/mois", type: "check" },
       { text: "Fonctionnalités de base uniquement", type: "x" },
       { text: 'Signature « Envoyé via LightChats » sur les DM', type: "x" },
     ],
@@ -390,8 +390,8 @@ export const home: Record<Lang, HomeContent> = {
     pricingPro: "Pro",
     pricingProDesc: "Pour créateurs et entreprises en croissance",
     pricingProBullets: [
+      { text: "5 000 réponses statiques/mois", type: "check", highlight: true },
       { text: "750 réponses IA/mois", type: "check" },
-      { text: "3 000 réponses statiques/mois", type: "check" },
       {
         text: "Recharge auto à 4,90 $ (+250 IA, +1 000 statiques)",
         type: "dollar",
@@ -400,11 +400,11 @@ export const home: Record<Lang, HomeContent> = {
       { text: "Aucun marquage LightChats sur les DM", type: "check" },
     ],
     pricingProCta: "Passer à Pro",
-    pricingAgency: "Agence",
-    pricingAgencyDesc: "Pour agences et grandes équipes",
+    pricingAgency: "Business",
+    pricingAgencyDesc: "Pour créateurs à fort volume et équipes",
     pricingAgencyBullets: [
+      { text: "20 000 réponses statiques/mois", type: "check", highlight: true },
       { text: "5 000 réponses IA/mois", type: "check" },
-      { text: "20 000 réponses statiques/mois", type: "check" },
       {
         text: "Recharge auto à 14,90 $ (+2 000 IA, +8 000 statiques)",
         type: "dollar",
@@ -412,7 +412,7 @@ export const home: Record<Lang, HomeContent> = {
       { text: "Toutes les fonctionnalités débloquées", type: "check" },
       { text: "Aucun marquage LightChats sur les DM", type: "check" },
     ],
-    pricingAgencyCta: "Choisir Agence",
+    pricingAgencyCta: "Choisir Business",
     mostPopular: "Le plus populaire",
     perMonth: "/mois",
     seeFullPricing: "Voir tous les détails des tarifs",
@@ -468,7 +468,7 @@ export const home: Record<Lang, HomeContent> = {
       },
       {
         q: "Que se passe-t-il quand j'atteins la limite de mon plan ?",
-        a: "Sur Pro et Agence, la recharge auto se déclenche si une carte est enregistrée — 4,90 $ (Pro) ou 14,90 $ (Agence) ajoutent des réponses supplémentaires instantanément, plafonné à 2 charges/mois par défaut (configurable 0–20 dans Facturation). Sur Gratuit, les réponses s'interrompent jusqu'au 1er du mois suivant — vous verrez une suggestion Pro, jamais de prélèvement surprise.",
+        a: "Sur Pro et Business, la recharge auto se déclenche si une carte est enregistrée — 4,90 $ (Pro) ou 14,90 $ (Business) ajoutent des réponses supplémentaires instantanément, plafonné à 2 charges/mois par défaut (configurable 0–20 dans Facturation). Sur Gratuit, les réponses s'interrompent jusqu'au 1er du mois suivant — vous verrez une suggestion Pro, jamais de prélèvement surprise.",
       },
     ],
     ctaTitle: "Prêt à grandir avec le chat ?",
@@ -579,8 +579,8 @@ export const home: Record<Lang, HomeContent> = {
     pricingFree: "مجاني",
     pricingFreeDesc: "مثالي للبداية",
     pricingFreeBullets: [
+      { text: "1,000 رد ثابت/شهر", type: "check", highlight: true },
       { text: "150 رد بالذكاء الاصطناعي/شهر", type: "check" },
-      { text: "1,000 رد ثابت/شهر", type: "check" },
       { text: "الميزات الأساسية فقط", type: "x" },
       { text: 'توقيع "Sent via LightChats" على الرسائل', type: "x" },
     ],
@@ -588,8 +588,8 @@ export const home: Record<Lang, HomeContent> = {
     pricingPro: "احترافي",
     pricingProDesc: "للمبدعين والشركات في طور النمو",
     pricingProBullets: [
+      { text: "5,000 رد ثابت/شهر", type: "check", highlight: true },
       { text: "750 رد بالذكاء الاصطناعي/شهر", type: "check" },
-      { text: "3,000 رد ثابت/شهر", type: "check" },
       {
         text: "إعادة شحن تلقائية بـ 4.90$ (+250 ذكاء اصطناعي، +1,000 ثابت)",
         type: "dollar",
@@ -598,11 +598,11 @@ export const home: Record<Lang, HomeContent> = {
       { text: "بدون علامة LightChats على الرسائل", type: "check" },
     ],
     pricingProCta: "الترقية إلى Pro",
-    pricingAgency: "وكالة",
-    pricingAgencyDesc: "للوكالات والفرق الكبيرة",
+    pricingAgency: "Business",
+    pricingAgencyDesc: "للمبدعين بحجم كبير والفرق",
     pricingAgencyBullets: [
+      { text: "20,000 رد ثابت/شهر", type: "check", highlight: true },
       { text: "5,000 رد بالذكاء الاصطناعي/شهر", type: "check" },
-      { text: "20,000 رد ثابت/شهر", type: "check" },
       {
         text: "إعادة شحن تلقائية بـ 14.90$ (+2,000 ذكاء اصطناعي، +8,000 ثابت)",
         type: "dollar",
@@ -610,7 +610,7 @@ export const home: Record<Lang, HomeContent> = {
       { text: "جميع الميزات مفتوحة", type: "check" },
       { text: "بدون علامة LightChats على الرسائل", type: "check" },
     ],
-    pricingAgencyCta: "اختر باقة الوكالة",
+    pricingAgencyCta: "اختر Business",
     mostPopular: "الأكثر شعبية",
     perMonth: "/شهرياً",
     seeFullPricing: "عرض كل تفاصيل الأسعار",
@@ -666,7 +666,7 @@ export const home: Record<Lang, HomeContent> = {
       },
       {
         q: "ماذا يحدث عند الوصول إلى حد الباقة؟",
-        a: "في باقتَي Pro وAgency، تبدأ إعادة الشحن التلقائية عند وجود بطاقة محفوظة — 4.90$ (Pro) أو 14.90$ (Agency) لإضافة ردود فوراً، بحد افتراضي مرتين/شهر (قابل للتعديل من 0 إلى 20 في صفحة الفواتير). في الباقة المجانية، تتوقف الردود حتى أول الشهر التالي — سترى عرض ترقية، دون أي رسوم مفاجئة.",
+        a: "في باقتَي Pro وBusiness، تبدأ إعادة الشحن التلقائية عند وجود بطاقة محفوظة — 4.90$ (Pro) أو 14.90$ (Business) لإضافة ردود فوراً، بحد افتراضي مرتين/شهر (قابل للتعديل من 0 إلى 20 في صفحة الفواتير). في الباقة المجانية، تتوقف الردود حتى أول الشهر التالي — سترى عرض ترقية، دون أي رسوم مفاجئة.",
       },
     ],
     ctaTitle: "هل أنت مستعد للنمو عبر المحادثات؟",

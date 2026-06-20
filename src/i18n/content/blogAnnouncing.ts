@@ -61,7 +61,7 @@ export const blogAnnouncing: Record<Lang, BlogAnnouncingContent> = {
       {
         a: "Three plans: Free (150 AI replies + 1,000 static), ",
         plansLink: "Pro at $9/mo",
-        b: ", and Agency at $29/mo",
+        b: ", and Business at $29/mo",
       },
       {
         a: "A built-in affiliate program — 30% recurring for 12 months, then 15% lifetime + a $5 instant bounty",
@@ -111,7 +111,7 @@ export const blogAnnouncing: Record<Lang, BlogAnnouncingContent> = {
       {
         a: "Trois plans : Gratuit (150 réponses IA + 1 000 statiques), ",
         plansLink: "Pro à 9 $/mois",
-        b: " et Agence à 29 $/mois",
+        b: " et Business à 29 $/mois",
       },
       {
         a: "Un programme d'affiliation intégré — 30 % récurrents pendant 12 mois, puis 15 % à vie + une prime instantanée de 5 $",
@@ -161,7 +161,7 @@ export const blogAnnouncing: Record<Lang, BlogAnnouncingContent> = {
       {
         a: "ثلاث باقات: مجانية (150 رداً بالذكاء الاصطناعي + 1,000 رد ثابت)، ",
         plansLink: "احترافية بـ 9$/شهر",
-        b: "، ووكالة بـ 29$/شهر",
+        b: "، وBusiness بـ 29$/شهر",
       },
       {
         a: "برنامج تسويق بالعمولة مدمج — 30٪ متكرّرة لمدة 12 شهراً، ثم 15٪ مدى الحياة + مكافأة فورية بـ 5$",

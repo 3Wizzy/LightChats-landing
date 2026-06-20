@@ -109,7 +109,7 @@ export const affiliates: Record<Lang, AffiliatesContent> = {
     ex3Value: "$33.75/mo",
     ex3Label: "Year 2+",
     ex3Detail: "$9 × 15% × 25",
-    exampleFooter: "Annual subscribers and Agency users earn proportionally more.",
+    exampleFooter: "Annual subscribers and Business users earn proportionally more.",
     faqTitle: "Affiliate FAQ",
     faqs: [
       {
@@ -201,7 +201,7 @@ export const affiliates: Record<Lang, AffiliatesContent> = {
     ex3Label: "Année 2 et +",
     ex3Detail: "9 $ × 15 % × 25",
     exampleFooter:
-      "Les abonnés annuels et les utilisateurs Agence gagnent proportionnellement plus.",
+      "Les abonnés annuels et les utilisateurs Business gagnent proportionnellement plus.",
     faqTitle: "FAQ Affiliation",
     faqs: [
       {
@@ -291,7 +291,7 @@ export const affiliates: Record<Lang, AffiliatesContent> = {
     ex3Value: "33.75$/شهر",
     ex3Label: "السنة الثانية فأكثر",
     ex3Detail: "9$ × 15٪ × 25",
-    exampleFooter: "المشتركون السنويون ومستخدمو باقة Agency يكسبون أكثر بالتناسب.",
+    exampleFooter: "المشتركون السنويون ومستخدمو باقة Business يكسبون أكثر بالتناسب.",
     faqTitle: "أسئلة شائعة عن الإحالة",
     faqs: [
       {

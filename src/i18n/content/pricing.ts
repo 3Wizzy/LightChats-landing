@@ -5,6 +5,7 @@ type FeatureType = "check" | "x" | "dollar";
 interface PlanFeature {
   text: string;
   type: FeatureType;
+  highlight?: boolean;
 }
 
 interface Plan {
@@ -141,8 +142,8 @@ export const pricing: Record<Lang, PricingContent> = {
         annual: "$0",
         desc: "Try LightChats with a real, useful quota — no card required.",
         features: [
+          { text: "1,000 static replies/month", type: "check", highlight: true },
           { text: "150 AI replies/month", type: "check" },
-          { text: "1,000 static replies/month", type: "check" },
           {
             text: "Onboarding bonus: +150 AI / +500 static for first 7 days",
             type: "check",
@@ -172,8 +173,8 @@ export const pricing: Record<Lang, PricingContent> = {
         annualSavings: "Save 27%",
         desc: "For creators running serious automation.",
         features: [
+          { text: "5,000 static replies/month", type: "check", highlight: true },
           { text: "750 AI replies/month", type: "check" },
-          { text: "3,000 static replies/month", type: "check" },
           {
             text: "Auto top-up at $4.90 → +250 AI / +1,000 static",
             type: "dollar",
@@ -197,14 +198,14 @@ export const pricing: Record<Lang, PricingContent> = {
         highlight: true,
       },
       {
-        name: "Agency",
+        name: "Business",
         monthly: "$29",
         annual: "$279",
         annualSavings: "Save 20%",
         desc: "For high-volume creators (100k+ followers) and heavy automation.",
         features: [
+          { text: "20,000 static replies/month", type: "check", highlight: true },
           { text: "5,000 AI replies/month", type: "check" },
-          { text: "20,000 static replies/month", type: "check" },
           {
             text: "Auto top-up at $14.90 → +2,000 AI / +8,000 static",
             type: "dollar",
@@ -217,7 +218,7 @@ export const pricing: Record<Lang, PricingContent> = {
             type: "check",
           },
         ],
-        cta: "Choose Agency",
+        cta: "Choose Business",
         ctaLink: "https://app.lightchats.com/billing",
         highlight: false,
       },
@@ -236,21 +237,21 @@ export const pricing: Record<Lang, PricingContent> = {
     featureCol: "Feature",
     freeCol: "Free",
     proCol: "Pro",
-    agencyCol: "Agency",
+    agencyCol: "Business",
     rows: [
       { label: "Monthly price", free: "$0", pro: "$9", agency: "$29" },
       { label: "Annual price", free: "—", pro: "$79/yr", agency: "$279/yr" },
+      {
+        label: "Static replies / month",
+        free: "1,000",
+        pro: "5,000",
+        agency: "20,000",
+      },
       {
         label: "AI replies / month",
         free: "150",
         pro: "750",
         agency: "5,000",
-      },
-      {
-        label: "Static replies / month",
-        free: "1,000",
-        pro: "3,000",
-        agency: "20,000",
       },
       {
         label: "Auto top-up",
@@ -335,7 +336,7 @@ export const pricing: Record<Lang, PricingContent> = {
       "Existing customers keep their original price if pricing changes later.",
     annualProTitle: "Pro",
     annualProSub: "Pay $79 once, get a full year.",
-    annualAgencyTitle: "Agency",
+    annualAgencyTitle: "Business",
     annualAgencySub: "Pay $279 once, get a full year.",
     monthlyTimes12: "Monthly × 12",
     annualLabel: "Annual",
@@ -375,7 +376,7 @@ export const pricing: Record<Lang, PricingContent> = {
       },
       {
         q: "What happens when I hit my limit?",
-        a: "On Free, replies pause until the 1st of next month and you'll see a Pro upsell — never a surprise charge. On Pro and Agency, if you have a saved card and haven't hit your top-up cap, we charge you to keep things running. You can configure the cap (or turn it off) in Billing.",
+        a: "On Free, replies pause until the 1st of next month and you'll see a Pro upsell — never a surprise charge. On Pro and Business, if you have a saved card and haven't hit your top-up cap, we charge you to keep things running. You can configure the cap (or turn it off) in Billing.",
       },
       {
         q: "Do unused replies roll over?",
@@ -423,8 +424,8 @@ export const pricing: Record<Lang, PricingContent> = {
         annual: "$0",
         desc: "Essayez LightChats avec un quota réellement utile — sans carte requise.",
         features: [
+          { text: "1 000 réponses statiques/mois", type: "check", highlight: true },
           { text: "150 réponses IA/mois", type: "check" },
-          { text: "1 000 réponses statiques/mois", type: "check" },
           {
             text: "Bonus d'accueil : +150 IA / +500 statiques pendant 7 jours",
             type: "check",
@@ -457,8 +458,8 @@ export const pricing: Record<Lang, PricingContent> = {
         annualSavings: "Économisez 27 %",
         desc: "Pour les créateurs qui automatisent sérieusement.",
         features: [
+          { text: "5 000 réponses statiques/mois", type: "check", highlight: true },
           { text: "750 réponses IA/mois", type: "check" },
-          { text: "3 000 réponses statiques/mois", type: "check" },
           {
             text: "Recharge auto à 4,90 $ → +250 IA / +1 000 statiques",
             type: "dollar",
@@ -482,14 +483,14 @@ export const pricing: Record<Lang, PricingContent> = {
         highlight: true,
       },
       {
-        name: "Agency",
+        name: "Business",
         monthly: "$29",
         annual: "$279",
         annualSavings: "Économisez 20 %",
         desc: "Pour les créateurs à fort volume (100k+ abonnés) et l'automatisation intensive.",
         features: [
+          { text: "20 000 réponses statiques/mois", type: "check", highlight: true },
           { text: "5 000 réponses IA/mois", type: "check" },
-          { text: "20 000 réponses statiques/mois", type: "check" },
           {
             text: "Recharge auto à 14,90 $ → +2 000 IA / +8 000 statiques",
             type: "dollar",
@@ -502,7 +503,7 @@ export const pricing: Record<Lang, PricingContent> = {
             type: "check",
           },
         ],
-        cta: "Choisir Agency",
+        cta: "Choisir Business",
         ctaLink: "https://app.lightchats.com/billing",
         highlight: false,
       },
@@ -521,7 +522,7 @@ export const pricing: Record<Lang, PricingContent> = {
     featureCol: "Fonctionnalité",
     freeCol: "Free",
     proCol: "Pro",
-    agencyCol: "Agency",
+    agencyCol: "Business",
     rows: [
       { label: "Prix mensuel", free: "$0", pro: "$9", agency: "$29" },
       {
@@ -531,16 +532,16 @@ export const pricing: Record<Lang, PricingContent> = {
         agency: "$279/an",
       },
       {
+        label: "Réponses statiques / mois",
+        free: "1 000",
+        pro: "5 000",
+        agency: "20 000",
+      },
+      {
         label: "Réponses IA / mois",
         free: "150",
         pro: "750",
         agency: "5 000",
-      },
-      {
-        label: "Réponses statiques / mois",
-        free: "1 000",
-        pro: "3 000",
-        agency: "20 000",
       },
       {
         label: "Recharge automatique",
@@ -626,7 +627,7 @@ export const pricing: Record<Lang, PricingContent> = {
       "Les clients existants conservent leur tarif initial si les prix évoluent par la suite.",
     annualProTitle: "Pro",
     annualProSub: "Payez 79 $ une seule fois pour une année complète.",
-    annualAgencyTitle: "Agency",
+    annualAgencyTitle: "Business",
     annualAgencySub: "Payez 279 $ une seule fois pour une année complète.",
     monthlyTimes12: "Mensuel × 12",
     annualLabel: "Annuel",
@@ -667,7 +668,7 @@ export const pricing: Record<Lang, PricingContent> = {
       },
       {
         q: "Que se passe-t-il quand j'atteins ma limite ?",
-        a: "Sur Free, les réponses s'interrompent jusqu'au 1er du mois suivant et vous voyez une suggestion Pro — jamais de prélèvement surprise. Sur Pro et Agency, si une carte est enregistrée et que vous n'avez pas atteint votre plafond de recharge, nous prélevons pour maintenir le service. Vous pouvez ajuster le plafond (ou le désactiver) dans Facturation.",
+        a: "Sur Free, les réponses s'interrompent jusqu'au 1er du mois suivant et vous voyez une suggestion Pro — jamais de prélèvement surprise. Sur Pro et Business, si une carte est enregistrée et que vous n'avez pas atteint votre plafond de recharge, nous prélevons pour maintenir le service. Vous pouvez ajuster le plafond (ou le désactiver) dans Facturation.",
       },
       {
         q: "Les réponses non utilisées sont-elles reportées ?",
@@ -715,8 +716,8 @@ export const pricing: Record<Lang, PricingContent> = {
         annual: "$0",
         desc: "جرّب LightChats بحصة فعلية مفيدة — بدون بطاقة.",
         features: [
+          { text: "1,000 رد ثابت/شهر", type: "check", highlight: true },
           { text: "150 رد بالذكاء الاصطناعي/شهر", type: "check" },
-          { text: "1,000 رد ثابت/شهر", type: "check" },
           {
             text: "مكافأة البداية: +150 ذكاء اصطناعي / +500 ثابت لأول 7 أيام",
             type: "check",
@@ -749,8 +750,8 @@ export const pricing: Record<Lang, PricingContent> = {
         annualSavings: "وفّر 27٪",
         desc: "للمبدعين الذين يديرون أتمتة جدّية.",
         features: [
+          { text: "5,000 رد ثابت/شهر", type: "check", highlight: true },
           { text: "750 رد بالذكاء الاصطناعي/شهر", type: "check" },
-          { text: "3,000 رد ثابت/شهر", type: "check" },
           {
             text: "إعادة شحن تلقائية بـ $4.90 → +250 ذكاء اصطناعي / +1,000 ثابت",
             type: "dollar",
@@ -774,14 +775,14 @@ export const pricing: Record<Lang, PricingContent> = {
         highlight: true,
       },
       {
-        name: "Agency",
+        name: "Business",
         monthly: "$29",
         annual: "$279",
         annualSavings: "وفّر 20٪",
         desc: "للمبدعين بحجم تفاعل كبير (+100 ألف متابع) وللأتمتة المكثفة.",
         features: [
+          { text: "20,000 رد ثابت/شهر", type: "check", highlight: true },
           { text: "5,000 رد بالذكاء الاصطناعي/شهر", type: "check" },
-          { text: "20,000 رد ثابت/شهر", type: "check" },
           {
             text: "إعادة شحن تلقائية بـ $14.90 → +2,000 ذكاء اصطناعي / +8,000 ثابت",
             type: "dollar",
@@ -794,7 +795,7 @@ export const pricing: Record<Lang, PricingContent> = {
             type: "check",
           },
         ],
-        cta: "اختر Agency",
+        cta: "اختر Business",
         ctaLink: "https://app.lightchats.com/billing",
         highlight: false,
       },
@@ -813,7 +814,7 @@ export const pricing: Record<Lang, PricingContent> = {
     featureCol: "الميزة",
     freeCol: "Free",
     proCol: "Pro",
-    agencyCol: "Agency",
+    agencyCol: "Business",
     rows: [
       { label: "السعر الشهري", free: "$0", pro: "$9", agency: "$29" },
       {
@@ -823,16 +824,16 @@ export const pricing: Record<Lang, PricingContent> = {
         agency: "$279/سنة",
       },
       {
+        label: "الردود الثابتة / شهر",
+        free: "1,000",
+        pro: "5,000",
+        agency: "20,000",
+      },
+      {
         label: "ردود الذكاء الاصطناعي / شهر",
         free: "150",
         pro: "750",
         agency: "5,000",
-      },
-      {
-        label: "الردود الثابتة / شهر",
-        free: "1,000",
-        pro: "3,000",
-        agency: "20,000",
       },
       {
         label: "الشحن التلقائي",
@@ -918,7 +919,7 @@ export const pricing: Record<Lang, PricingContent> = {
       "يحتفظ العملاء الحاليون بالسعر الأصلي إذا تغيرت الأسعار لاحقاً.",
     annualProTitle: "Pro",
     annualProSub: "ادفع 79$ مرة واحدة واحصل على سنة كاملة.",
-    annualAgencyTitle: "Agency",
+    annualAgencyTitle: "Business",
     annualAgencySub: "ادفع 279$ مرة واحدة واحصل على سنة كاملة.",
     monthlyTimes12: "شهري × 12",
     annualLabel: "سنوي",
@@ -958,7 +959,7 @@ export const pricing: Record<Lang, PricingContent> = {
       },
       {
         q: "ماذا يحدث عند الوصول إلى الحد؟",
-        a: "في الباقة المجانية، تتوقف الردود حتى أول الشهر التالي وتظهر لك ترقية إلى Pro — دون أي خصم مفاجئ. في باقتَي Pro وAgency، إذا كانت لديك بطاقة محفوظة ولم تبلغ حد الشحن، نخصم تلقائياً لمواصلة العمل. يمكنك تعديل الحد (أو إيقافه) من صفحة الفواتير.",
+        a: "في الباقة المجانية، تتوقف الردود حتى أول الشهر التالي وتظهر لك ترقية إلى Pro — دون أي خصم مفاجئ. في باقتَي Pro وBusiness، إذا كانت لديك بطاقة محفوظة ولم تبلغ حد الشحن، نخصم تلقائياً لمواصلة العمل. يمكنك تعديل الحد (أو إيقافه) من صفحة الفواتير.",
       },
       {
         q: "هل تُرحَّل الردود غير المستخدمة؟",

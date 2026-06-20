@@ -78,14 +78,14 @@ export const help: Record<Lang, HelpContent> = {
         desc: "Plans, top-ups, and how charges work.",
         articles: [
           {
-            title: "Free, Pro, and Agency plans",
+            title: "Free, Pro, and Business plans",
             summary:
-              "Free: 150 AI / 1,000 static. Pro ($9/mo): 750 AI / 3,000 static. Agency ($29/mo): 5,000 AI / 20,000 static. Annual billing saves up to 27%.",
+              "Free: 150 AI / 1,000 static. Pro ($9/mo): 750 AI / 5,000 static. Business ($29/mo): 5,000 AI / 20,000 static. Annual billing saves up to 27%.",
           },
           {
             title: "Auto top-ups",
             summary:
-              "When you hit your monthly limit on Pro/Agency, auto top-up adds capacity for $4.90 (Pro) or $14.90 (Agency). Default cap of 2 charges/month, configurable from 0–20.",
+              "When you hit your monthly limit on Pro/Business, auto top-up adds capacity for $4.90 (Pro) or $14.90 (Business). Default cap of 2 charges/month, configurable from 0–20.",
           },
           {
             title: "Cancel or downgrade",
@@ -174,14 +174,14 @@ export const help: Record<Lang, HelpContent> = {
         desc: "Formules, recharges et fonctionnement des prélèvements.",
         articles: [
           {
-            title: "Formules Gratuit, Pro et Agence",
+            title: "Formules Gratuit, Pro et Business",
             summary:
-              "Gratuit : 150 IA / 1 000 statiques. Pro (9 $/mois) : 750 IA / 3 000 statiques. Agence (29 $/mois) : 5 000 IA / 20 000 statiques. La facturation annuelle permet d'économiser jusqu'à 27 %.",
+              "Gratuit : 150 IA / 1 000 statiques. Pro (9 $/mois) : 750 IA / 5 000 statiques. Business (29 $/mois) : 5 000 IA / 20 000 statiques. La facturation annuelle permet d'économiser jusqu'à 27 %.",
           },
           {
             title: "Recharges automatiques",
             summary:
-              "Lorsque vous atteignez votre limite mensuelle sur Pro/Agence, la recharge auto ajoute de la capacité pour 4,90 $ (Pro) ou 14,90 $ (Agence). Plafond par défaut de 2 prélèvements/mois, configurable de 0 à 20.",
+              "Lorsque vous atteignez votre limite mensuelle sur Pro/Business, la recharge auto ajoute de la capacité pour 4,90 $ (Pro) ou 14,90 $ (Business). Plafond par défaut de 2 prélèvements/mois, configurable de 0 à 20.",
           },
           {
             title: "Annuler ou rétrograder",
@@ -271,14 +271,14 @@ export const help: Record<Lang, HelpContent> = {
         desc: "الباقات وإعادة الشحن وكيفية احتساب الرسوم.",
         articles: [
           {
-            title: "باقات مجاني وPro وAgency",
+            title: "باقات مجاني وPro وBusiness",
             summary:
-              "مجاني: 150 ذكاء اصطناعي / 1,000 ثابت. Pro (9$/شهر): 750 ذكاء اصطناعي / 3,000 ثابت. Agency (29$/شهر): 5,000 ذكاء اصطناعي / 20,000 ثابت. تتيح الفوترة السنوية توفيراً يصل إلى 27%.",
+              "مجاني: 150 ذكاء اصطناعي / 1,000 ثابت. Pro (9$/شهر): 750 ذكاء اصطناعي / 5,000 ثابت. Business (29$/شهر): 5,000 ذكاء اصطناعي / 20,000 ثابت. تتيح الفوترة السنوية توفيراً يصل إلى 27%.",
           },
           {
             title: "إعادة الشحن التلقائية",
             summary:
-              "عند بلوغ الحد الشهري في باقتَي Pro/Agency، تضيف إعادة الشحن التلقائية سعة إضافية مقابل 4.90$ (Pro) أو 14.90$ (Agency). الحدّ الافتراضي مرّتان شهرياً، قابل للتعديل من 0 إلى 20.",
+              "عند بلوغ الحد الشهري في باقتَي Pro/Business، تضيف إعادة الشحن التلقائية سعة إضافية مقابل 4.90$ (Pro) أو 14.90$ (Business). الحدّ الافتراضي مرّتان شهرياً، قابل للتعديل من 0 إلى 20.",
           },
           {
             title: "الإلغاء أو خفض الباقة",

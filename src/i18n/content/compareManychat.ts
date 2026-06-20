@@ -81,7 +81,7 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
       },
       {
         feature: "Live comment trigger",
-        lightchats: "Pro and Agency",
+        lightchats: "Pro and Business",
         competitor: "Higher tiers only",
       },
       {
@@ -161,7 +161,7 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
       },
       {
         feature: "Déclencheur de commentaire en direct",
-        lightchats: "Pro et Agence",
+        lightchats: "Pro et Business",
         competitor: "Paliers supérieurs uniquement",
       },
       {
@@ -241,7 +241,7 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
       },
       {
         feature: "محفز التعليقات الفورية",
-        lightchats: "Pro وAgency",
+        lightchats: "Pro وBusiness",
         competitor: "في الباقات الأعلى فقط",
       },
       {
