@@ -34,6 +34,9 @@ interface HomeContent {
   hiwEyebrow: string;
   hiwTitle: string;
   hiwSteps: { step: string; title: string; desc: string }[];
+  // Problem section
+  problemTitle: string;
+  problems: { title: string; desc: string }[];
   // Pricing
   pricingEyebrow: string;
   pricingTitle: string;
@@ -179,6 +182,21 @@ export const home: Record<Lang, HomeContent> = {
         step: "03",
         title: "Watch It Convert",
         desc: "LightChats works 24/7 — engaging followers, qualifying leads, and driving sales automatically.",
+      },
+    ],
+    problemTitle: "Why is selling in the DMs so hard?",
+    problems: [
+      {
+        title: "Buried in DMs",
+        desc: "Every post buries you in comments and DMs. Replying by hand stops scaling past a few dozen conversations.",
+      },
+      {
+        title: "Leads slip away",
+        desc: 'Someone comments "price?" and never hears back. Every missed reply is a sale walking out the door.',
+      },
+      {
+        title: "You can't be online 24/7",
+        desc: "Followers message at 2am, on weekends, mid-vacation. An automation answers in under a second — every time.",
       },
     ],
     pricingEyebrow: "Pricing",
@@ -383,6 +401,21 @@ export const home: Record<Lang, HomeContent> = {
         desc: "LightChats travaille 24h/24 — engageant les abonnés, qualifiant les leads et générant des ventes automatiquement.",
       },
     ],
+    problemTitle: "Pourquoi vendre en DM est-il si difficile ?",
+    problems: [
+      {
+        title: "Noyé sous les DM",
+        desc: "Chaque publication vous ensevelit sous les commentaires et les DM. Répondre à la main ne suit plus au-delà de quelques dizaines de conversations.",
+      },
+      {
+        title: "Des prospects qui s'évaporent",
+        desc: "Quelqu'un commente « prix ? » et n'obtient jamais de réponse. Chaque réponse manquée, c'est une vente qui s'en va.",
+      },
+      {
+        title: "Impossible d'être en ligne 24h/24",
+        desc: "Vos abonnés écrivent à 2h du matin, le week-end, en pleines vacances. Une automatisation répond en moins d'une seconde — à chaque fois.",
+      },
+    ],
     pricingEyebrow: "Tarifs",
     pricingTitle: "Des tarifs simples et transparents",
     pricingSub: "Deux formules simples. Construisez gratuitement — payez seulement à l'activation. Annulez à tout moment.",
@@ -583,6 +616,21 @@ export const home: Record<Lang, HomeContent> = {
         step: "03",
         title: "شاهد التحويل",
         desc: "LightChats يعمل 24/7 — يتفاعل مع المتابعين ويؤهّل العملاء ويحقّق المبيعات تلقائياً.",
+      },
+    ],
+    problemTitle: "لماذا البيع عبر الرسائل صعب إلى هذا الحد؟",
+    problems: [
+      {
+        title: "غارق في الرسائل",
+        desc: "كل منشور يغرقك بالتعليقات والرسائل. الرد اليدوي لا يواكب بعد بضع عشرات من المحادثات.",
+      },
+      {
+        title: "عملاء محتملون يضيعون",
+        desc: 'أحدهم يعلّق "السعر؟" ولا يصله رد أبداً. كل رد فائت هو عملية بيع تخرج من الباب.',
+      },
+      {
+        title: "لا يمكنك البقاء متصلاً 24/7",
+        desc: "متابعوك يراسلونك في الثانية فجراً وفي عطلة نهاية الأسبوع وأثناء إجازتك. الأتمتة ترد في أقل من ثانية — في كل مرة.",
       },
     ],
     pricingEyebrow: "الأسعار",

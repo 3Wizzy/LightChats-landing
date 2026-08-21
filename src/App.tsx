@@ -3,12 +3,20 @@ import Link from "./i18n/LangLink";
 import logo from "./assets/logo.png";
 import Footer from "./components/Footer";
 import ThemeToggle from "./components/ThemeToggle";
+import TrustChip from "./components/TrustChip";
 import { useLang } from "./i18n/LanguageContext";
 import { common } from "./i18n/common";
 import { home } from "./i18n/content/home";
 import LanguageSwitcher from "./i18n/LanguageSwitcher";
 
 const APP_URL = "https://app.lightchats.com/";
+
+// Icons for the "why is this hard" columns: inbox flood, lost lead, clock.
+const problemIcons = [
+  "M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H6.911a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661z",
+  "M22 10.5h-6m-2.25-4.125a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zM4 19.235v-.11a6.375 6.375 0 0112.75 0v.109A12.318 12.318 0 0110.374 21c-2.331 0-4.512-.645-6.374-1.766z",
+  "M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z",
+];
 
 function useReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -137,12 +145,12 @@ function App() {
             >
               {t.howItWorks}
             </a>
-            <a href="#pricing" className="hover:text-white transition-colors">
+            <Link to="/pricing" className="hover:text-white transition-colors">
               {t.pricing}
-            </a>
-            <a href="#partner" className="hover:text-white transition-colors">
+            </Link>
+            <Link to="/affiliates" className="hover:text-white transition-colors">
               {t.partner}
-            </a>
+            </Link>
             <a href="#faq" className="hover:text-white transition-colors">
               {t.faq}
             </a>
@@ -211,20 +219,20 @@ function App() {
             >
               {t.howItWorks}
             </a>
-            <a
-              href="#pricing"
+            <Link
+              to="/pricing"
               className="block text-surface-300 hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.pricing}
-            </a>
-            <a
-              href="#partner"
+            </Link>
+            <Link
+              to="/affiliates"
               className="block text-surface-300 hover:text-white py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               {t.partner}
-            </a>
+            </Link>
             <a
               href="#faq"
               className="block text-surface-300 hover:text-white py-2"
@@ -319,8 +327,13 @@ function App() {
             </a>
           </div>
 
-          <div className="animate-fade-in-up animation-delay-800 mt-8 flex justify-center lg:justify-start">
-            <MetaPartnerBadge />
+          <p className="animate-fade-in-up animation-delay-600 mt-3 text-xs text-surface-500 text-center lg:text-start">
+            {t.noCardRequired}
+          </p>
+
+          <div className="animate-fade-in-up animation-delay-800 mt-7 flex flex-wrap justify-center lg:justify-start gap-2">
+            <TrustChip icon="meta" label={t.chipMetaPartner} />
+            <TrustChip icon="check" label={t.chipOfficialApi} />
           </div>
           </div>
 
@@ -376,6 +389,42 @@ function App() {
               ))}
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ─── Problem ─── */}
+      <section className="py-20 md:py-28 relative z-10">
+        <div className="max-w-5xl mx-auto px-6">
+          <RevealSection>
+            <h2 className="text-3xl md:text-5xl font-bold text-center mb-14">
+              {h.problemTitle}
+            </h2>
+          </RevealSection>
+          <div className="grid md:grid-cols-3 gap-10">
+            {h.problems.map((prob, i) => (
+              <RevealSection key={prob.title}>
+                <div className="text-center">
+                  <div className="w-10 h-10 mx-auto rounded-lg bg-white/5 border border-white/10 flex items-center justify-center mb-4">
+                    <svg
+                      className="w-5 h-5 text-surface-400"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d={problemIcons[i]} />
+                    </svg>
+                  </div>
+                  <h3 className="font-semibold mb-2">{prob.title}</h3>
+                  <p className="text-surface-400 text-sm leading-relaxed">
+                    {prob.desc}
+                  </p>
+                </div>
+              </RevealSection>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -864,31 +913,6 @@ function App() {
 
 /* ─── Sub-components ─── */
 
-/**
- * Meta partner trust badge shown under the hero CTAs. Program badge text
- * stays in English in every locale, matching how Meta renders it.
- * Logo path: Simple Icons "Meta" (CC0).
- */
-function MetaPartnerBadge() {
-  return (
-    <div className="inline-flex items-center gap-3 bg-white/5 border border-white/10 rounded-full ps-3.5 pe-5 py-2">
-      <svg
-        className="w-7 h-7 flex-shrink-0"
-        viewBox="0 0 24 24"
-        fill="#0467DF"
-        aria-hidden="true"
-      >
-        <path d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z" />
-      </svg>
-      <div className="text-start leading-tight">
-        <p className="text-[10px] uppercase tracking-[0.18em] text-surface-500 font-semibold">
-          Meta
-        </p>
-        <p className="text-sm font-semibold text-white">Business Partner</p>
-      </div>
-    </div>
-  );
-}
 
 function Bullet({ text }: { text: string }) {
   return (

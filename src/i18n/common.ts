@@ -43,6 +43,9 @@ interface CommonStrings {
   heroSub: string;
   startFree: string;
   seeHow: string;
+  noCardRequired: string;
+  chipMetaPartner: string;
+  chipOfficialApi: string;
   statsMessages: string;
   statsBusinesses: string;
   statsUptime: string;
@@ -88,6 +91,9 @@ export const common: Record<Lang, CommonStrings> = {
       "Drive more sales and conversions on Instagram using automation. Engage followers, capture leads, and grow your business — all on autopilot.",
     startFree: "Start for free",
     seeHow: "See how it works",
+    noCardRequired: "No credit card required",
+    chipMetaPartner: "Meta Business Partner",
+    chipOfficialApi: "Official Instagram API",
     statsMessages: "Messages Automated",
     statsBusinesses: "Active Businesses",
     statsUptime: "Uptime",
@@ -131,6 +137,9 @@ export const common: Record<Lang, CommonStrings> = {
       "Boostez vos ventes et conversions sur Instagram grâce à l'automatisation. Engagez vos abonnés, captez des leads et développez votre activité — en pilote automatique.",
     startFree: "Commencer gratuitement",
     seeHow: "Voir comment ça marche",
+    noCardRequired: "Aucune carte bancaire requise",
+    chipMetaPartner: "Meta Business Partner",
+    chipOfficialApi: "API Instagram officielle",
     statsMessages: "Messages automatisés",
     statsBusinesses: "Entreprises actives",
     statsUptime: "Disponibilité",
@@ -174,6 +183,9 @@ export const common: Record<Lang, CommonStrings> = {
       "حقّق المزيد من المبيعات والتحويلات على إنستغرام بفضل الأتمتة. تفاعل مع المتابعين والتقط العملاء المحتملين ونمِّ أعمالك — كل ذلك تلقائياً.",
     startFree: "ابدأ مجاناً",
     seeHow: "شاهد كيف يعمل",
+    noCardRequired: "لا حاجة لبطاقة ائتمان",
+    chipMetaPartner: "Meta Business Partner",
+    chipOfficialApi: "واجهة إنستغرام الرسمية",
     statsMessages: "رسائل مؤتمتة",
     statsBusinesses: "شركات نشطة",
     statsUptime: "وقت التشغيل",

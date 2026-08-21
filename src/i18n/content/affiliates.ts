@@ -16,6 +16,29 @@ interface AffiliatesContent {
   heroTitle: string;
   heroSub: string;
   becomePartner: string;
+  partnerLogin: string;
+  freeToJoin: string;
+  // dashboard mockup
+  dashTitle: string;
+  dashClicks: string;
+  dashSignups: string;
+  dashPaid: string;
+  dashEarned: string;
+  dashChartTitle: string;
+  dashLegendCommissions: string;
+  dashLegendReferrals: string;
+  dashMonths: string[];
+  dashActivity: { label: string; meta: string }[];
+  // earnings calculator
+  calcTitle: string;
+  calcSub: string;
+  calcLabel: string;
+  calcBounty: string;
+  calcBountyDetail: string;
+  calcProLabel: string;
+  calcBusinessLabel: string;
+  calcPerMonth: string;
+  calcFootnote: string;
   // commission cards
   card1Value: string;
   card1Title: string;
@@ -58,6 +81,32 @@ export const affiliates: Record<Lang, AffiliatesContent> = {
     heroSub:
       "Refer creators and businesses to LightChats and earn for every payment they make — for years. No quotas, no waiting period.",
     becomePartner: "Become a Partner",
+    partnerLogin: "Partner login",
+    freeToJoin: "Free to join. No quotas, no minimums.",
+    dashTitle: "LightChats — Partner Dashboard",
+    dashClicks: "Clicks",
+    dashSignups: "Sign-ups",
+    dashPaid: "Paid users",
+    dashEarned: "Earned",
+    dashChartTitle: "Monthly commission revenue",
+    dashLegendCommissions: "Commissions",
+    dashLegendReferrals: "Referrals",
+    dashMonths: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
+    dashActivity: [
+      { label: "New sign-up via your link", meta: "2m ago" },
+      { label: "Referral paid first invoice", meta: "+$5.00" },
+      { label: "Recurring commission", meta: "+$2.70" },
+    ],
+    calcTitle: "See what you could earn",
+    calcSub: "Drag the slider to estimate your monthly recurring income.",
+    calcLabel: "Referred customers",
+    calcBounty: "Upfront bounties",
+    calcBountyDetail: "$5 × each first paid invoice",
+    calcProLabel: "If they're on Pro ($9/mo)",
+    calcBusinessLabel: "If they're on Business ($29/mo)",
+    calcPerMonth: "/mo",
+    calcFootnote:
+      "Based on the 30% year-1 commission on monthly prices. After year 1 you keep 15% for life.",
     card1Value: "30%",
     card1Title: "Year 1 recurring",
     card1Desc:
@@ -148,6 +197,32 @@ export const affiliates: Record<Lang, AffiliatesContent> = {
     heroSub:
       "Recommandez des créateurs et des entreprises à LightChats et gagnez sur chaque paiement qu'ils effectuent — pendant des années. Pas de quota, pas de délai d'attente.",
     becomePartner: "Devenir partenaire",
+    partnerLogin: "Espace partenaire",
+    freeToJoin: "Inscription gratuite. Aucun quota, aucun minimum.",
+    dashTitle: "LightChats — Tableau de bord partenaire",
+    dashClicks: "Clics",
+    dashSignups: "Inscriptions",
+    dashPaid: "Utilisateurs payants",
+    dashEarned: "Gains",
+    dashChartTitle: "Revenus de commission mensuels",
+    dashLegendCommissions: "Commissions",
+    dashLegendReferrals: "Parrainages",
+    dashMonths: ["Jan", "Fév", "Mar", "Avr", "Mai", "Juin", "Juil", "Août"],
+    dashActivity: [
+      { label: "Nouvelle inscription via votre lien", meta: "il y a 2 min" },
+      { label: "Première facture payée par un filleul", meta: "+5,00 $" },
+      { label: "Commission récurrente", meta: "+2,70 $" },
+    ],
+    calcTitle: "Estimez vos gains",
+    calcSub: "Faites glisser le curseur pour estimer votre revenu mensuel récurrent.",
+    calcLabel: "Clients parrainés",
+    calcBounty: "Primes initiales",
+    calcBountyDetail: "5 $ × chaque première facture payée",
+    calcProLabel: "S'ils sont sur Pro (9 $/mois)",
+    calcBusinessLabel: "S'ils sont sur Business (29 $/mois)",
+    calcPerMonth: "/mois",
+    calcFootnote:
+      "Basé sur la commission de 30 % en année 1 sur les prix mensuels. Après un an, vous conservez 15 % à vie.",
     card1Value: "30 %",
     card1Title: "Récurrent — année 1",
     card1Desc:
@@ -240,6 +315,32 @@ export const affiliates: Record<Lang, AffiliatesContent> = {
     heroSub:
       "رشّح المبدعين والشركات إلى LightChats واربح من كل دفعة يقومون بها — لسنوات. لا حصص ولا فترة انتظار.",
     becomePartner: "كن شريكاً",
+    partnerLogin: "دخول الشركاء",
+    freeToJoin: "الانضمام مجاني. بلا حصص وبلا حد أدنى.",
+    dashTitle: "LightChats — لوحة الشريك",
+    dashClicks: "نقرات",
+    dashSignups: "تسجيلات",
+    dashPaid: "مستخدمون مدفوعون",
+    dashEarned: "الأرباح",
+    dashChartTitle: "إيراد العمولات الشهري",
+    dashLegendCommissions: "العمولات",
+    dashLegendReferrals: "الإحالات",
+    dashMonths: ["ينا", "فبر", "مار", "أبر", "ماي", "يون", "يول", "أغس"],
+    dashActivity: [
+      { label: "تسجيل جديد عبر رابطك", meta: "قبل دقيقتين" },
+      { label: "إحالة سدّدت أول فاتورة", meta: "+5.00$" },
+      { label: "عمولة متكرّرة", meta: "+2.70$" },
+    ],
+    calcTitle: "احسب ما يمكنك كسبه",
+    calcSub: "حرّك المؤشر لتقدير دخلك الشهري المتكرر.",
+    calcLabel: "عملاء مُحالون",
+    calcBounty: "مكافآت مقدّمة",
+    calcBountyDetail: "5$ × كل أول فاتورة مدفوعة",
+    calcProLabel: "إن كانوا على باقة Pro (9$/شهر)",
+    calcBusinessLabel: "إن كانوا على باقة Business (29$/شهر)",
+    calcPerMonth: "/شهر",
+    calcFootnote:
+      "استناداً إلى عمولة 30٪ في السنة الأولى على الأسعار الشهرية. بعد السنة الأولى تحتفظ بـ 15٪ مدى الحياة.",
     card1Value: "30٪",
     card1Title: "متكرّرة في السنة الأولى",
     card1Desc:
