@@ -195,11 +195,11 @@ export default function Pricing() {
 
       {/* Plan cards */}
       <section className="max-w-6xl mx-auto px-6 pb-20">
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6">
           {p.plans.map((plan) => {
             const showAnnual = billing === "annual";
             const price = showAnnual ? plan.annual : plan.monthly;
-            const period = showAnnual ? p.perYear : p.perMonth;
+            const period = plan.isCustom ? "" : showAnnual ? p.perYear : p.perMonth;
             return (
               <div
                 key={plan.name}

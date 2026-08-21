@@ -48,6 +48,12 @@ interface HomeContent {
   pricingAgencyAnnual: string;
   pricingAgencyBullets: { text: string; type: "check" | "x" | "dollar"; highlight?: boolean }[];
   pricingAgencyCta: string;
+  pricingCustom: string;
+  pricingCustomPrice: string;
+  pricingCustomDesc: string;
+  pricingCustomNote: string;
+  pricingCustomBullets: { text: string; type: "check" | "x" | "dollar"; highlight?: boolean }[];
+  pricingCustomCta: string;
   mostPopular: string;
   perMonth: string;
   seeFullPricing: string;
@@ -206,6 +212,17 @@ export const home: Record<Lang, HomeContent> = {
       { text: "No LightChats branding on DMs", type: "check" },
     ],
     pricingAgencyCta: "Choose Business",
+    pricingCustom: "Custom",
+    pricingCustomPrice: "Let's talk",
+    pricingCustomDesc: "For brands & agencies beyond Business volumes",
+    pricingCustomNote: "tailored to your volume",
+    pricingCustomBullets: [
+      { text: "Custom reply volumes", type: "check", highlight: true },
+      { text: "Everything in Business", type: "check" },
+      { text: "Tailored contract & pricing", type: "check" },
+      { text: "Priority support", type: "check" },
+    ],
+    pricingCustomCta: "Contact us",
     mostPopular: "Most Popular",
     perMonth: "/month",
     seeFullPricing: "See full pricing details",
@@ -397,6 +414,17 @@ export const home: Record<Lang, HomeContent> = {
       { text: "Aucun marquage LightChats sur les DM", type: "check" },
     ],
     pricingAgencyCta: "Choisir Business",
+    pricingCustom: "Custom",
+    pricingCustomPrice: "Sur mesure",
+    pricingCustomDesc: "Pour les marques et agences au-delà des volumes Business",
+    pricingCustomNote: "adapté à votre volume",
+    pricingCustomBullets: [
+      { text: "Volumes de réponses personnalisés", type: "check", highlight: true },
+      { text: "Tout ce qui est inclus dans Business", type: "check" },
+      { text: "Contrat et tarification sur mesure", type: "check" },
+      { text: "Support prioritaire", type: "check" },
+    ],
+    pricingCustomCta: "Contactez-nous",
     mostPopular: "Le plus populaire",
     perMonth: "/mois",
     seeFullPricing: "Voir tous les détails des tarifs",
@@ -588,6 +616,17 @@ export const home: Record<Lang, HomeContent> = {
       { text: "بدون علامة LightChats على الرسائل", type: "check" },
     ],
     pricingAgencyCta: "اختر Business",
+    pricingCustom: "Custom",
+    pricingCustomPrice: "مخصص",
+    pricingCustomDesc: "للعلامات التجارية والوكالات التي تتجاوز أحجام Business",
+    pricingCustomNote: "حسب حجم استخدامك",
+    pricingCustomBullets: [
+      { text: "أحجام ردود مخصصة", type: "check", highlight: true },
+      { text: "كل ما في باقة Business", type: "check" },
+      { text: "عقد وتسعير مخصصان", type: "check" },
+      { text: "دعم ذو أولوية", type: "check" },
+    ],
+    pricingCustomCta: "تواصل معنا",
     mostPopular: "الأكثر شعبية",
     perMonth: "/شهرياً",
     seeFullPricing: "عرض كل تفاصيل الأسعار",

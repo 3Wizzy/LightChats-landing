@@ -18,6 +18,8 @@ interface Plan {
   cta: string;
   ctaLink: string;
   highlight: boolean;
+  /** Contact-us tier: price text is not a number, hide /month-/year suffix. */
+  isCustom?: boolean;
 }
 
 interface ComparisonRow {
@@ -188,6 +190,26 @@ export const pricing: Record<Lang, PricingContent> = {
         cta: "Choose Business",
         ctaLink: "https://app.lightchats.com/signup",
         highlight: false,
+      },
+      {
+        name: "Custom",
+        monthly: "Let's talk",
+        annual: "Let's talk",
+        desc: "For brands & agencies beyond Business volumes.",
+        features: [
+          { text: "Custom reply volumes", type: "check", highlight: true },
+          { text: "Everything in Business", type: "check" },
+          { text: "Tailored contract & pricing", type: "check" },
+          { text: "Priority support", type: "check" },
+          {
+            text: "Tell us your volume — we'll build the plan around it",
+            type: "check",
+          },
+        ],
+        cta: "Contact us",
+        ctaLink: "mailto:contact@lightchats.com?subject=Custom%20plan",
+        highlight: false,
+        isCustom: true,
       },
     ],
     mostPopular: "Most Popular",
@@ -422,6 +444,26 @@ export const pricing: Record<Lang, PricingContent> = {
         cta: "Choisir Business",
         ctaLink: "https://app.lightchats.com/signup",
         highlight: false,
+      },
+      {
+        name: "Custom",
+        monthly: "Sur mesure",
+        annual: "Sur mesure",
+        desc: "Pour les marques et agences au-delà des volumes Business.",
+        features: [
+          { text: "Volumes de réponses personnalisés", type: "check", highlight: true },
+          { text: "Tout ce qui est inclus dans Business", type: "check" },
+          { text: "Contrat et tarification sur mesure", type: "check" },
+          { text: "Support prioritaire", type: "check" },
+          {
+            text: "Indiquez-nous votre volume — nous bâtissons le plan autour",
+            type: "check",
+          },
+        ],
+        cta: "Contactez-nous",
+        ctaLink: "mailto:contact@lightchats.com?subject=Custom%20plan",
+        highlight: false,
+        isCustom: true,
       },
     ],
     mostPopular: "Le plus populaire",
@@ -663,6 +705,26 @@ export const pricing: Record<Lang, PricingContent> = {
         cta: "اختر Business",
         ctaLink: "https://app.lightchats.com/signup",
         highlight: false,
+      },
+      {
+        name: "Custom",
+        monthly: "مخصص",
+        annual: "مخصص",
+        desc: "للعلامات التجارية والوكالات التي تتجاوز أحجام Business.",
+        features: [
+          { text: "أحجام ردود مخصصة", type: "check", highlight: true },
+          { text: "كل ما في باقة Business", type: "check" },
+          { text: "عقد وتسعير مخصصان", type: "check" },
+          { text: "دعم ذو أولوية", type: "check" },
+          {
+            text: "أخبرنا بحجم استخدامك — ونبني الباقة حوله",
+            type: "check",
+          },
+        ],
+        cta: "تواصل معنا",
+        ctaLink: "mailto:contact@lightchats.com?subject=Custom%20plan",
+        highlight: false,
+        isCustom: true,
       },
     ],
     mostPopular: "الأكثر شعبية",
