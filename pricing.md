@@ -2,28 +2,29 @@
 
 > Public pricing reference. Designed to be copied into the landing-page repo for the pricing page, comparison tables, and marketing copy. All numbers verified against `server/prisma/seed.ts`.
 
-Last updated: 2026-04-26
+Last updated: 2026-08-21
 
 ---
 
 ## Plans at a glance
 
-| | **Free** | **Pro** | **Agency** |
-|---|---|---|---|
-| **Monthly** | $0 | $9 | $29 |
-| **Annual** | — | $79/yr (save 27%) | $279/yr (save 20%) |
-| **AI replies / month** | 150 | 750 | 5,000 |
-| **Static replies / month** | 1,000 | 3,000 | 20,000 |
-| **Auto top-up** | — | $4.90 → +250 AI / +1,000 static | $14.90 → +2,000 AI / +8,000 static |
-| **Onboarding bonus** | +150 AI / +500 static for 7 days | — | — |
-| **Comment & DM auto-reply** | ✓ | ✓ | ✓ |
-| **Story-reply trigger** | 1 active flow | Unlimited | Unlimited |
-| **Live comment trigger** | — | ✓ | ✓ |
-| **AI multi-turn conversations** | — | ✓ | ✓ |
-| **"Ask for" actions** (collect email/phone/address) | — | ✓ | ✓ |
-| **Conditions / branching** | — | ✓ | ✓ |
-| **Contact groups** | "All Contacts" only | Custom groups | Custom groups |
-| **DM watermark** | "— Sent via Lightchats ⚡" | None | None |
+> **The Free tier is retired and there is no trial period.** New accounts start in a `pending` state on IG connect — **no payment wall**: they explore and build flows freely, and are prompted to subscribe only when they try to activate an automation. The first invoice is **charged immediately** at subscribe time; only then do automations run. The `free` Plan row survives in the DB only as the technical home for suspended (cancelled/lapsed) accounts and is never sold or selectable.
+
+| | **Pro** | **Business** |
+|---|---|---|
+| **Monthly** | $9 | $29 |
+| **Annual** | $79/yr (save 27%) | $279/yr (save 20%) |
+| **AI replies / month** | 750 | 5,000 |
+| **Static replies / month** | 5,000 | 20,000 |
+| **Auto top-up** | $4.90 → +2,500 static / +250 AI | $14.90 → +10,000 static / +2,000 AI |
+| **Comment & DM auto-reply** | ✓ | ✓ |
+| **Story-reply trigger** | Unlimited | Unlimited |
+| **Live comment trigger** | ✓ | ✓ |
+| **AI multi-turn conversations** | ✓ | ✓ |
+| **"Ask for" actions** (collect email/phone/address) | ✓ | ✓ |
+| **Conditions / branching** | ✓ | ✓ |
+| **Contact groups** | Custom groups | Custom groups |
+| **DM watermark** | None | None |
 
 **One Lightchats account = one Instagram account.** A user with multiple IG accounts subscribes each one separately.
 
@@ -31,36 +32,27 @@ Last updated: 2026-04-26
 
 ## Plan details
 
-### Free — $0/month
+### Free tier (retired) — and no trial
 
-For creators trying out automation. Generous enough to actually feel the product working before deciding whether to upgrade.
-
-- **150 AI replies + 1,000 static replies per month**
-- **Onboarding bonus: extra 150 AI + 500 static replies for the first 7 days** after email verification (or first IG connect, whichever comes first) — so week-1 totals are 300 AI / 1,500 static
-- Comment auto-reply, DM auto-reply, basic flow automations
-- One active story-reply flow (the canonical "comment X to get the link" hook)
-- Outbound DMs include a `— Sent via Lightchats ⚡` signature
-- Limits reset on the 1st of each month
-- No payment method required
-- No auto top-ups — Free users hitting the limit see a Pro upsell, not a charge
+There is no Free product tier and no trial period anymore. New accounts start `pending` at IG connect: they browse the app and build flows without any wall, but automations can't be enabled until they subscribe — the activation attempt is what surfaces the payment prompt. Subscribing requires a payment method and charges the first invoice immediately; the plan activates only once the charge succeeds. Cancelled/lapsed accounts become `suspended` (automations off, data retained, upgrade wall). The `free` Plan row remains in the database purely as the technical home for suspended accounts (`AccountPlan.planId` is non-nullable) and is filtered out of the user-facing plans list.
 
 ### Pro — $9/month or $79/year
 
 For creators running serious automation. ~27% off when paid annually.
 
-- **750 AI replies + 3,000 static replies per month**
+- **750 AI replies + 5,000 static replies per month**
 - All flow features unlocked: AI multi-turn conversations, story replies (unlimited flows), live comments, conditions, custom contact groups, "ask-for" data collection
 - No DM signature
-- **Auto top-up: $4.90 → +250 AI / +1,000 static** when you hit the limit (capped at 2/mo by default; users can change the cap to 0–20 in Billing)
+- **Auto top-up: $4.90 → +2,500 static / +250 AI** when you hit the limit (capped at 2/mo by default; users can change the cap to 0–20 in Billing)
 - Cancel anytime — Pro stays active until the end of the paid period
 
-### Agency — $29/month or $279/year
+### Business — $29/month or $279/year
 
 For high-volume creators (100k+ followers) running heavy automation on a single account. ~20% off when paid annually.
 
 - **5,000 AI replies + 20,000 static replies per month**
 - Everything in Pro
-- **Auto top-up: $14.90 → +2,000 AI / +8,000 static** when you hit the limit (same configurable cap)
+- **Auto top-up: $14.90 → +10,000 static / +2,000 AI** when you hit the limit (same configurable cap)
 - Above this volume, contact us — we'll set up a custom contract
 
 ---
@@ -73,8 +65,9 @@ When an Instagram comment or DM triggers a reply but you've used your monthly qu
 - **You're emailed every time** an auto top-up runs — amount, capacity added, card used, current count.
 - **Free plan does not auto top-up.** Hitting the limit on Free shows a Pro upsell, not a charge.
 - **No saved card?** Replies pause until the limit resets on the 1st of next month.
+- **Failed charge? We stop retrying.** A declined card is not re-charged on every triggered automation. After a failure we back off (1h, then 6h) and stop auto-charging entirely after 3 failures in a period — your automations pause instead. Updating your card in `Billing` immediately clears the block, and a successful charge resets the failure count.
 
-Per-reply cost ratio is roughly the same on Pro and Agency — about 1.3–1.6× the base plan's per-reply rate, so top-ups are a sensible overage layer rather than a punitive one.
+Per-reply cost ratio is roughly the same on Pro and Business — about 1.3–1.6× the base plan's per-reply rate, so top-ups are a sensible overage layer rather than a punitive one.
 
 ---
 
@@ -83,7 +76,7 @@ Per-reply cost ratio is roughly the same on Pro and Agency — about 1.3–1.6×
 | Plan | Monthly | Annual | Savings |
 |---|---|---|---|
 | Pro | $9 × 12 = $108 | **$79** | ~27% |
-| Agency | $29 × 12 = $348 | **$279** | ~20% |
+| Business | $29 × 12 = $348 | **$279** | ~20% |
 
 Annual subscribers are charged once, then auto-renew at the same rate. Existing customers keep their original price if we change pricing later (Stripe Prices are versioned by amount).
 
@@ -101,7 +94,7 @@ A creator who refers 25 users to Pro earns:
 - $5 × 25 = **$125 upfront**
 - $9 × 30% × 25 = **$67.50 / month** (year 1) → **$33.75 / month** (year 2+)
 
-Apply at `partners.lightchats.com`. Track referrals via your unique link or `?ref=<your_code>` query param on signup.
+Apply at `app.lightchats.com/partners`. Track referrals via your unique link or `?ref=<your_code>` query param on signup.
 
 ---
 
@@ -112,7 +105,7 @@ Any outbound comment or DM where the response text is generated by AI (Lightchat
 
 **What happens when I hit my limit?**
 - *Free:* Replies pause until the 1st of next month. You see a Pro upsell.
-- *Pro / Agency:* If you have a saved card and haven't hit your top-up cap, we charge you to keep things running. If not, replies pause until reset. You can change the cap (or turn it off) in Billing.
+- *Pro / Business:* If you have a saved card and haven't hit your top-up cap, we charge you to keep things running. If not, replies pause until reset. You can change the cap (or turn it off) in Billing.
 
 **Do unused replies roll over?**
 No. Each plan's monthly quota resets on the 1st. The 7-day onboarding bonus is one-shot — it expires at the end of the trial window, even if unused.

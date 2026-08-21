@@ -2,6 +2,7 @@ import Link from "../i18n/LangLink";
 import { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import Footer from "../components/Footer";
+import ThemeToggle from "../components/ThemeToggle";
 import { useLang } from "../i18n/LanguageContext";
 import { common } from "../i18n/common";
 import { pricing } from "../i18n/content/pricing";
@@ -120,25 +121,28 @@ export default function Pricing() {
               LightChats
             </span>
           </Link>
-          <Link
-            to="/"
-            className="text-sm text-surface-400 hover:text-white transition-colors flex items-center gap-1.5"
-          >
-            <svg
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <Link
+              to="/"
+              className="text-sm text-surface-400 hover:text-white transition-colors flex items-center gap-1.5"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            {t.backToHome}
-          </Link>
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              {t.backToHome}
+            </Link>
+          </div>
         </div>
       </nav>
 
@@ -191,11 +195,11 @@ export default function Pricing() {
 
       {/* Plan cards */}
       <section className="max-w-6xl mx-auto px-6 pb-20">
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {p.plans.map((plan) => {
-            const showAnnual = billing === "annual" && !plan.isFree;
+            const showAnnual = billing === "annual";
             const price = showAnnual ? plan.annual : plan.monthly;
-            const period = plan.isFree ? "" : showAnnual ? p.perYear : p.perMonth;
+            const period = showAnnual ? p.perYear : p.perMonth;
             return (
               <div
                 key={plan.name}
@@ -292,9 +296,6 @@ export default function Pricing() {
                   <th className="text-start text-surface-500 font-medium px-6 py-4 min-w-[220px]">
                     {p.featureCol}
                   </th>
-                  <th className="text-start text-white font-semibold px-6 py-4">
-                    {p.freeCol}
-                  </th>
                   <th className="text-start text-brand-400 font-semibold px-6 py-4 bg-brand-500/[0.04]">
                     {p.proCol}
                   </th>
@@ -314,7 +315,6 @@ export default function Pricing() {
                     }
                   >
                     <td className="text-surface-400 px-6 py-4">{row.label}</td>
-                    <td className="text-surface-300 px-6 py-4">{row.free}</td>
                     <td className="text-surface-200 px-6 py-4 bg-brand-500/[0.04]">
                       {row.pro}
                     </td>
@@ -363,10 +363,10 @@ export default function Pricing() {
             </div>
             <div className="bg-surface-950/50 border border-white/5 rounded-xl p-6">
               <h3 className="text-white font-semibold mb-2">
-                {p.topupFreeTitle}
+                {p.topupCapReachedTitle}
               </h3>
               <p className="text-surface-400 text-sm leading-relaxed">
-                {p.topupFreeDesc}
+                {p.topupCapReachedDesc}
               </p>
             </div>
             <div className="bg-surface-950/50 border border-white/5 rounded-xl p-6">

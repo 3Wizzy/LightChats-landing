@@ -38,16 +38,14 @@ interface HomeContent {
   pricingEyebrow: string;
   pricingTitle: string;
   pricingSub: string;
-  pricingFree: string;
-  pricingFreeDesc: string;
-  pricingFreeBullets: { text: string; type: "check" | "x" | "dollar"; highlight?: boolean }[];
-  pricingFreeCta: string;
   pricingPro: string;
   pricingProDesc: string;
+  pricingProAnnual: string;
   pricingProBullets: { text: string; type: "check" | "x" | "dollar"; highlight?: boolean }[];
   pricingProCta: string;
   pricingAgency: string;
   pricingAgencyDesc: string;
+  pricingAgencyAnnual: string;
   pricingAgencyBullets: { text: string; type: "check" | "x" | "dollar"; highlight?: boolean }[];
   pricingAgencyCta: string;
   mostPopular: string;
@@ -179,36 +177,29 @@ export const home: Record<Lang, HomeContent> = {
     ],
     pricingEyebrow: "Pricing",
     pricingTitle: "Simple, transparent pricing",
-    pricingSub: "Start free. Upgrade when you need more.",
-    pricingFree: "Free",
-    pricingFreeDesc: "Perfect to get started",
-    pricingFreeBullets: [
-      { text: "1,000 static replies/month", type: "check", highlight: true },
-      { text: "150 AI replies/month", type: "check" },
-      { text: "Basic features only", type: "x" },
-      { text: '"Sent via LightChats" signature on DMs', type: "x" },
-    ],
-    pricingFreeCta: "Get Started Free",
+    pricingSub: "Two simple plans. Build for free — pay only when you activate. Cancel anytime.",
     pricingPro: "Pro",
     pricingProDesc: "For growing creators & businesses",
+    pricingProAnnual: "or $79/year (save 27%)",
     pricingProBullets: [
       { text: "5,000 static replies/month", type: "check", highlight: true },
       { text: "750 AI replies/month", type: "check" },
       {
-        text: "Auto top-up at $4.90 (+250 AI, +1,000 static)",
+        text: "Auto top-up at $4.90 (+250 AI, +2,500 static)",
         type: "dollar",
       },
       { text: "All features unlocked", type: "check" },
       { text: "No LightChats branding on DMs", type: "check" },
     ],
-    pricingProCta: "Upgrade to Pro",
+    pricingProCta: "Get started with Pro",
     pricingAgency: "Business",
     pricingAgencyDesc: "For high-volume creators & teams",
+    pricingAgencyAnnual: "or $279/year (save 20%)",
     pricingAgencyBullets: [
       { text: "20,000 static replies/month", type: "check", highlight: true },
       { text: "5,000 AI replies/month", type: "check" },
       {
-        text: "Auto top-up at $14.90 (+2,000 AI, +8,000 static)",
+        text: "Auto top-up at $14.90 (+2,000 AI, +10,000 static)",
         type: "dollar",
       },
       { text: "All features unlocked", type: "check" },
@@ -270,7 +261,7 @@ export const home: Record<Lang, HomeContent> = {
       },
       {
         q: "What happens when I reach my plan limit?",
-        a: "On Pro and Business, auto top-up kicks in if you have a saved card — $4.90 (Pro) or $14.90 (Business) adds extra replies instantly, capped at 2 charges/month by default (configurable 0–20 in Billing). On Free, replies pause until the 1st of next month — you'll see a Pro upsell, never a surprise charge.",
+        a: "On Pro and Business, auto top-up kicks in if you have a saved card — $4.90 (Pro) or $14.90 (Business) adds extra replies instantly, capped at 2 charges/month by default (configurable 0–20 in Billing). Once the cap is reached, replies pause until the 1st of next month — never a surprise charge.",
       },
     ],
     ctaTitle: "Ready to grow with chat?",
@@ -377,36 +368,29 @@ export const home: Record<Lang, HomeContent> = {
     ],
     pricingEyebrow: "Tarifs",
     pricingTitle: "Des tarifs simples et transparents",
-    pricingSub: "Commencez gratuitement. Passez au supérieur quand vous voulez.",
-    pricingFree: "Gratuit",
-    pricingFreeDesc: "Parfait pour démarrer",
-    pricingFreeBullets: [
-      { text: "1 000 réponses statiques/mois", type: "check", highlight: true },
-      { text: "150 réponses IA/mois", type: "check" },
-      { text: "Fonctionnalités de base uniquement", type: "x" },
-      { text: 'Signature « Envoyé via LightChats » sur les DM', type: "x" },
-    ],
-    pricingFreeCta: "Commencer gratuitement",
+    pricingSub: "Deux formules simples. Construisez gratuitement — payez seulement à l'activation. Annulez à tout moment.",
     pricingPro: "Pro",
     pricingProDesc: "Pour créateurs et entreprises en croissance",
+    pricingProAnnual: "ou 79 $/an (économisez 27 %)",
     pricingProBullets: [
       { text: "5 000 réponses statiques/mois", type: "check", highlight: true },
       { text: "750 réponses IA/mois", type: "check" },
       {
-        text: "Recharge auto à 4,90 $ (+250 IA, +1 000 statiques)",
+        text: "Recharge auto à 4,90 $ (+250 IA, +2 500 statiques)",
         type: "dollar",
       },
       { text: "Toutes les fonctionnalités débloquées", type: "check" },
       { text: "Aucun marquage LightChats sur les DM", type: "check" },
     ],
-    pricingProCta: "Passer à Pro",
+    pricingProCta: "Commencer avec Pro",
     pricingAgency: "Business",
     pricingAgencyDesc: "Pour créateurs à fort volume et équipes",
+    pricingAgencyAnnual: "ou 279 $/an (économisez 20 %)",
     pricingAgencyBullets: [
       { text: "20 000 réponses statiques/mois", type: "check", highlight: true },
       { text: "5 000 réponses IA/mois", type: "check" },
       {
-        text: "Recharge auto à 14,90 $ (+2 000 IA, +8 000 statiques)",
+        text: "Recharge auto à 14,90 $ (+2 000 IA, +10 000 statiques)",
         type: "dollar",
       },
       { text: "Toutes les fonctionnalités débloquées", type: "check" },
@@ -468,7 +452,7 @@ export const home: Record<Lang, HomeContent> = {
       },
       {
         q: "Que se passe-t-il quand j'atteins la limite de mon plan ?",
-        a: "Sur Pro et Business, la recharge auto se déclenche si une carte est enregistrée — 4,90 $ (Pro) ou 14,90 $ (Business) ajoutent des réponses supplémentaires instantanément, plafonné à 2 charges/mois par défaut (configurable 0–20 dans Facturation). Sur Gratuit, les réponses s'interrompent jusqu'au 1er du mois suivant — vous verrez une suggestion Pro, jamais de prélèvement surprise.",
+        a: "Sur Pro et Business, la recharge auto se déclenche si une carte est enregistrée — 4,90 $ (Pro) ou 14,90 $ (Business) ajoutent des réponses supplémentaires instantanément, plafonné à 2 charges/mois par défaut (configurable 0–20 dans Facturation). Une fois le plafond atteint, les réponses s'interrompent jusqu'au 1er du mois suivant — jamais de prélèvement surprise.",
       },
     ],
     ctaTitle: "Prêt à grandir avec le chat ?",
@@ -575,36 +559,29 @@ export const home: Record<Lang, HomeContent> = {
     ],
     pricingEyebrow: "الأسعار",
     pricingTitle: "تسعير بسيط وشفاف",
-    pricingSub: "ابدأ مجاناً. ترقَّ عندما تحتاج إلى المزيد.",
-    pricingFree: "مجاني",
-    pricingFreeDesc: "مثالي للبداية",
-    pricingFreeBullets: [
-      { text: "1,000 رد ثابت/شهر", type: "check", highlight: true },
-      { text: "150 رد بالذكاء الاصطناعي/شهر", type: "check" },
-      { text: "الميزات الأساسية فقط", type: "x" },
-      { text: 'توقيع "Sent via LightChats" على الرسائل', type: "x" },
-    ],
-    pricingFreeCta: "ابدأ مجاناً",
+    pricingSub: "خطتان بسيطتان. أنشئ مجاناً — وادفع فقط عند التفعيل. ألغِ في أي وقت.",
     pricingPro: "احترافي",
     pricingProDesc: "للمبدعين والشركات في طور النمو",
+    pricingProAnnual: "أو 79$/سنة (وفّر 27٪)",
     pricingProBullets: [
       { text: "5,000 رد ثابت/شهر", type: "check", highlight: true },
       { text: "750 رد بالذكاء الاصطناعي/شهر", type: "check" },
       {
-        text: "إعادة شحن تلقائية بـ 4.90$ (+250 ذكاء اصطناعي، +1,000 ثابت)",
+        text: "إعادة شحن تلقائية بـ 4.90$ (+250 ذكاء اصطناعي، +2,500 ثابت)",
         type: "dollar",
       },
       { text: "جميع الميزات مفتوحة", type: "check" },
       { text: "بدون علامة LightChats على الرسائل", type: "check" },
     ],
-    pricingProCta: "الترقية إلى Pro",
+    pricingProCta: "ابدأ مع Pro",
     pricingAgency: "Business",
     pricingAgencyDesc: "للمبدعين بحجم كبير والفرق",
+    pricingAgencyAnnual: "أو 279$/سنة (وفّر 20٪)",
     pricingAgencyBullets: [
       { text: "20,000 رد ثابت/شهر", type: "check", highlight: true },
       { text: "5,000 رد بالذكاء الاصطناعي/شهر", type: "check" },
       {
-        text: "إعادة شحن تلقائية بـ 14.90$ (+2,000 ذكاء اصطناعي، +8,000 ثابت)",
+        text: "إعادة شحن تلقائية بـ 14.90$ (+2,000 ذكاء اصطناعي، +10,000 ثابت)",
         type: "dollar",
       },
       { text: "جميع الميزات مفتوحة", type: "check" },
@@ -666,7 +643,7 @@ export const home: Record<Lang, HomeContent> = {
       },
       {
         q: "ماذا يحدث عند الوصول إلى حد الباقة؟",
-        a: "في باقتَي Pro وBusiness، تبدأ إعادة الشحن التلقائية عند وجود بطاقة محفوظة — 4.90$ (Pro) أو 14.90$ (Business) لإضافة ردود فوراً، بحد افتراضي مرتين/شهر (قابل للتعديل من 0 إلى 20 في صفحة الفواتير). في الباقة المجانية، تتوقف الردود حتى أول الشهر التالي — سترى عرض ترقية، دون أي رسوم مفاجئة.",
+        a: "في باقتَي Pro وBusiness، تبدأ إعادة الشحن التلقائية عند وجود بطاقة محفوظة — 4.90$ (Pro) أو 14.90$ (Business) لإضافة ردود فوراً، بحد افتراضي مرتين/شهر (قابل للتعديل من 0 إلى 20 في صفحة الفواتير). عند بلوغ الحد، تتوقف الردود حتى أول الشهر التالي — دون أي رسوم مفاجئة.",
       },
     ],
     ctaTitle: "هل أنت مستعد للنمو عبر المحادثات؟",

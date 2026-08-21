@@ -18,12 +18,10 @@ interface Plan {
   cta: string;
   ctaLink: string;
   highlight: boolean;
-  isFree?: boolean;
 }
 
 interface ComparisonRow {
   label: string;
-  free: string;
   pro: string;
   agency: string;
 }
@@ -59,7 +57,6 @@ interface PricingContent {
   compareTitle: string;
   compareSub: string;
   featureCol: string;
-  freeCol: string;
   proCol: string;
   agencyCol: string;
   rows: ComparisonRow[];
@@ -72,8 +69,8 @@ interface PricingContent {
   topupCapAfter: string;
   topupEmailTitle: string;
   topupEmailDesc: string;
-  topupFreeTitle: string;
-  topupFreeDesc: string;
+  topupCapReachedTitle: string;
+  topupCapReachedDesc: string;
   topupNoCardTitle: string;
   topupNoCardDesc: string;
   topupFootnote: string;
@@ -131,41 +128,11 @@ export const pricing: Record<Lang, PricingContent> = {
     titleA: "Simple plans.",
     titleB: "No surprise charges.",
     intro:
-      "Start free with a real, usable quota. Upgrade when your automations outgrow it. Annual billing saves up to 27%.",
+      "Sign up and build your automations for free — no card required. Pick a plan when you're ready to activate them. Annual billing saves up to 27%.",
     monthly: "Monthly",
     annual: "Annual",
     saveBadge: "Save 27%",
     plans: [
-      {
-        name: "Free",
-        monthly: "$0",
-        annual: "$0",
-        desc: "Try LightChats with a real, useful quota — no card required.",
-        features: [
-          { text: "1,000 static replies/month", type: "check", highlight: true },
-          { text: "150 AI replies/month", type: "check" },
-          {
-            text: "Onboarding bonus: +150 AI / +500 static for first 7 days",
-            type: "check",
-          },
-          { text: "Comment & DM auto-reply", type: "check" },
-          { text: "1 active story-reply flow", type: "check" },
-          { text: "Basic flow automations", type: "check" },
-          { text: "Live comment trigger", type: "x" },
-          { text: "AI multi-turn conversations", type: "x" },
-          { text: '"Ask for" actions (email/phone/address)', type: "x" },
-          { text: "Conditions & branching", type: "x" },
-          { text: "Custom contact groups", type: "x" },
-          {
-            text: '"Sent via LightChats ⚡" signature on automated DMs',
-            type: "x",
-          },
-        ],
-        cta: "Get Started Free",
-        ctaLink: "https://app.lightchats.com/signup",
-        highlight: false,
-        isFree: true,
-      },
       {
         name: "Pro",
         monthly: "$9",
@@ -176,7 +143,7 @@ export const pricing: Record<Lang, PricingContent> = {
           { text: "5,000 static replies/month", type: "check", highlight: true },
           { text: "750 AI replies/month", type: "check" },
           {
-            text: "Auto top-up at $4.90 → +250 AI / +1,000 static",
+            text: "Auto top-up at $4.90 → +250 AI / +2,500 static",
             type: "dollar",
           },
           {
@@ -193,8 +160,8 @@ export const pricing: Record<Lang, PricingContent> = {
           { text: "No LightChats branding on DMs", type: "check" },
           { text: "Cancel anytime", type: "check" },
         ],
-        cta: "Upgrade to Pro",
-        ctaLink: "https://app.lightchats.com/billing",
+        cta: "Get started with Pro",
+        ctaLink: "https://app.lightchats.com/signup",
         highlight: true,
       },
       {
@@ -207,7 +174,7 @@ export const pricing: Record<Lang, PricingContent> = {
           { text: "20,000 static replies/month", type: "check", highlight: true },
           { text: "5,000 AI replies/month", type: "check" },
           {
-            text: "Auto top-up at $14.90 → +2,000 AI / +8,000 static",
+            text: "Auto top-up at $14.90 → +2,000 AI / +10,000 static",
             type: "dollar",
           },
           { text: "Everything in Pro", type: "check" },
@@ -219,7 +186,7 @@ export const pricing: Record<Lang, PricingContent> = {
           },
         ],
         cta: "Choose Business",
-        ctaLink: "https://app.lightchats.com/billing",
+        ctaLink: "https://app.lightchats.com/signup",
         highlight: false,
       },
     ],
@@ -235,87 +202,69 @@ export const pricing: Record<Lang, PricingContent> = {
     compareTitle: "Plans, side-by-side",
     compareSub: "Every feature, every limit, no asterisks.",
     featureCol: "Feature",
-    freeCol: "Free",
     proCol: "Pro",
     agencyCol: "Business",
     rows: [
-      { label: "Monthly price", free: "$0", pro: "$9", agency: "$29" },
-      { label: "Annual price", free: "—", pro: "$79/yr", agency: "$279/yr" },
+      { label: "Monthly price", pro: "$9", agency: "$29" },
+      { label: "Annual price", pro: "$79/yr", agency: "$279/yr" },
       {
         label: "Static replies / month",
-        free: "1,000",
         pro: "5,000",
         agency: "20,000",
       },
       {
         label: "AI replies / month",
-        free: "150",
         pro: "750",
         agency: "5,000",
       },
       {
         label: "Auto top-up",
-        free: "—",
-        pro: "$4.90 → +250 AI / +1,000 static",
-        agency: "$14.90 → +2,000 AI / +8,000 static",
-      },
-      {
-        label: "Onboarding bonus",
-        free: "+150 AI / +500 static (7 days)",
-        pro: "—",
-        agency: "—",
+        pro: "$4.90 → +250 AI / +2,500 static",
+        agency: "$14.90 → +2,000 AI / +10,000 static",
       },
       {
         label: "Comment & DM auto-reply",
-        free: "Included",
         pro: "Included",
         agency: "Included",
       },
       {
         label: "Story-reply trigger",
-        free: "1 active flow",
         pro: "Unlimited",
         agency: "Unlimited",
       },
       {
         label: "Live comment trigger",
-        free: "—",
         pro: "Included",
         agency: "Included",
       },
       {
         label: "AI multi-turn conversations",
-        free: "—",
         pro: "Included",
         agency: "Included",
       },
       {
         label: '"Ask for" actions',
-        free: "—",
         pro: "Included",
         agency: "Included",
       },
       {
         label: "Conditions & branching",
-        free: "—",
         pro: "Included",
         agency: "Included",
       },
       {
         label: "Contact groups",
-        free: '"All Contacts" only',
         pro: "Custom groups",
         agency: "Custom groups",
       },
       {
         label: "DM watermark",
-        free: '"Sent via LightChats ⚡"',
         pro: "None",
         agency: "None",
       },
     ],
     topupTitle: "How auto top-ups work",
-    topupSub: "A safety net for paid plans — never a surprise.",
+    topupSub: "A safety net for busy months — never a surprise.",
     topupCapTitle: "Configurable cap",
     topupCapBefore: "Default cap is ",
     topupCapBold: "2 charges per month",
@@ -323,9 +272,9 @@ export const pricing: Record<Lang, PricingContent> = {
     topupEmailTitle: "Email receipt",
     topupEmailDesc:
       "You're emailed every time a top-up runs — amount, capacity added, card used, current count.",
-    topupFreeTitle: "Free plan = no charges",
-    topupFreeDesc:
-      "Hitting the limit on Free shows a Pro upsell, never a charge.",
+    topupCapReachedTitle: "Cap reached?",
+    topupCapReachedDesc:
+      "Once you hit your top-up cap, replies pause until the 1st — never an extra charge beyond it.",
     topupNoCardTitle: "No card on file?",
     topupNoCardDesc:
       "Replies pause until your monthly quota resets on the 1st.",
@@ -371,16 +320,20 @@ export const pricing: Record<Lang, PricingContent> = {
     faqTitle: "Pricing FAQ",
     faqs: [
       {
+        q: "Is there a free plan or trial?",
+        a: "Signing up and building automations is completely free — no card required, no time limit. You only pick a plan when you're ready to activate an automation; the first invoice is charged at subscribe time, and your automations start running right away.",
+      },
+      {
         q: 'What counts as an "AI reply"?',
         a: "Any outbound comment or DM where the response text is generated by AI. Static replies are pre-written templates that get sent verbatim — much cheaper to run, with much higher monthly limits.",
       },
       {
         q: "What happens when I hit my limit?",
-        a: "On Free, replies pause until the 1st of next month and you'll see a Pro upsell — never a surprise charge. On Pro and Business, if you have a saved card and haven't hit your top-up cap, we charge you to keep things running. You can configure the cap (or turn it off) in Billing.",
+        a: "If you have a saved card and haven't hit your top-up cap, we charge a top-up to keep things running. You can configure the cap (or turn it off) in Billing — once it's reached, replies pause until the 1st. Never a surprise beyond the cap you set.",
       },
       {
         q: "Do unused replies roll over?",
-        a: "No. Each plan's monthly quota resets on the 1st. The 7-day onboarding bonus is one-shot — it expires at the end of the trial window, even if unused.",
+        a: "No. Each plan's monthly quota resets on the 1st.",
       },
       {
         q: "Can I run multiple Instagram accounts on one subscription?",
@@ -389,10 +342,6 @@ export const pricing: Record<Lang, PricingContent> = {
       {
         q: "Can I switch from monthly to annual mid-period?",
         a: "Yes — cancel and re-subscribe with the annual interval. Your current paid period is honored until it ends.",
-      },
-      {
-        q: "Does the Free plan really watermark every DM?",
-        a: "Only automated DMs sent via flow automations or AI conversations. Manual replies you type yourself in the LightChats inbox are never watermarked, regardless of plan.",
       },
       {
         q: "What's the cancellation policy?",
@@ -404,8 +353,8 @@ export const pricing: Record<Lang, PricingContent> = {
       },
     ],
     ctaTitle: "Start automating in minutes",
-    ctaSub: "Free forever. No credit card required.",
-    ctaBtn: "Get Started Free",
+    ctaSub: "Sign up and build for free. No credit card required until you activate.",
+    ctaBtn: "Get Started",
   },
   fr: {
     backToHome: "Retour à l'accueil",
@@ -413,44 +362,11 @@ export const pricing: Record<Lang, PricingContent> = {
     titleA: "Des plans simples.",
     titleB: "Aucun frais surprise.",
     intro:
-      "Commencez gratuitement avec un quota réellement utilisable. Passez au supérieur quand vos automatisations le dépassent. Le paiement annuel vous fait économiser jusqu'à 27 %.",
+      "Inscrivez-vous et construisez vos automatisations gratuitement — sans carte. Choisissez une formule quand vous êtes prêt à les activer. Le paiement annuel vous fait économiser jusqu'à 27 %.",
     monthly: "Mensuel",
     annual: "Annuel",
     saveBadge: "Économisez 27 %",
     plans: [
-      {
-        name: "Free",
-        monthly: "$0",
-        annual: "$0",
-        desc: "Essayez LightChats avec un quota réellement utile — sans carte requise.",
-        features: [
-          { text: "1 000 réponses statiques/mois", type: "check", highlight: true },
-          { text: "150 réponses IA/mois", type: "check" },
-          {
-            text: "Bonus d'accueil : +150 IA / +500 statiques pendant 7 jours",
-            type: "check",
-          },
-          { text: "Réponse auto aux commentaires et DM", type: "check" },
-          { text: "1 flux de réponse aux stories actif", type: "check" },
-          { text: "Automatisations de flux de base", type: "check" },
-          { text: "Déclencheur de commentaire en direct", type: "x" },
-          { text: "Conversations IA multi-tours", type: "x" },
-          {
-            text: 'Actions « Demander » (e-mail, téléphone, adresse)',
-            type: "x",
-          },
-          { text: "Conditions et branchements", type: "x" },
-          { text: "Groupes de contacts personnalisés", type: "x" },
-          {
-            text: 'Signature « Sent via LightChats ⚡ » sur les DM automatisés',
-            type: "x",
-          },
-        ],
-        cta: "Commencer gratuitement",
-        ctaLink: "https://app.lightchats.com/signup",
-        highlight: false,
-        isFree: true,
-      },
       {
         name: "Pro",
         monthly: "$9",
@@ -461,7 +377,7 @@ export const pricing: Record<Lang, PricingContent> = {
           { text: "5 000 réponses statiques/mois", type: "check", highlight: true },
           { text: "750 réponses IA/mois", type: "check" },
           {
-            text: "Recharge auto à 4,90 $ → +250 IA / +1 000 statiques",
+            text: "Recharge auto à 4,90 $ → +250 IA / +2 500 statiques",
             type: "dollar",
           },
           {
@@ -478,8 +394,8 @@ export const pricing: Record<Lang, PricingContent> = {
           { text: "Aucun marquage LightChats sur les DM", type: "check" },
           { text: "Annulez à tout moment", type: "check" },
         ],
-        cta: "Passer à Pro",
-        ctaLink: "https://app.lightchats.com/billing",
+        cta: "Commencer avec Pro",
+        ctaLink: "https://app.lightchats.com/signup",
         highlight: true,
       },
       {
@@ -492,7 +408,7 @@ export const pricing: Record<Lang, PricingContent> = {
           { text: "20 000 réponses statiques/mois", type: "check", highlight: true },
           { text: "5 000 réponses IA/mois", type: "check" },
           {
-            text: "Recharge auto à 14,90 $ → +2 000 IA / +8 000 statiques",
+            text: "Recharge auto à 14,90 $ → +2 000 IA / +10 000 statiques",
             type: "dollar",
           },
           { text: "Tout ce qui est inclus dans Pro", type: "check" },
@@ -504,7 +420,7 @@ export const pricing: Record<Lang, PricingContent> = {
           },
         ],
         cta: "Choisir Business",
-        ctaLink: "https://app.lightchats.com/billing",
+        ctaLink: "https://app.lightchats.com/signup",
         highlight: false,
       },
     ],
@@ -520,92 +436,73 @@ export const pricing: Record<Lang, PricingContent> = {
     compareTitle: "Les plans en parallèle",
     compareSub: "Chaque fonctionnalité, chaque limite, sans astérisque.",
     featureCol: "Fonctionnalité",
-    freeCol: "Free",
     proCol: "Pro",
     agencyCol: "Business",
     rows: [
-      { label: "Prix mensuel", free: "$0", pro: "$9", agency: "$29" },
+      { label: "Prix mensuel", pro: "$9", agency: "$29" },
       {
         label: "Prix annuel",
-        free: "—",
         pro: "$79/an",
         agency: "$279/an",
       },
       {
         label: "Réponses statiques / mois",
-        free: "1 000",
         pro: "5 000",
         agency: "20 000",
       },
       {
         label: "Réponses IA / mois",
-        free: "150",
         pro: "750",
         agency: "5 000",
       },
       {
         label: "Recharge automatique",
-        free: "—",
-        pro: "4,90 $ → +250 IA / +1 000 statiques",
-        agency: "14,90 $ → +2 000 IA / +8 000 statiques",
-      },
-      {
-        label: "Bonus d'accueil",
-        free: "+150 IA / +500 statiques (7 jours)",
-        pro: "—",
-        agency: "—",
+        pro: "4,90 $ → +250 IA / +2 500 statiques",
+        agency: "14,90 $ → +2 000 IA / +10 000 statiques",
       },
       {
         label: "Réponse auto commentaires et DM",
-        free: "Inclus",
         pro: "Inclus",
         agency: "Inclus",
       },
       {
         label: "Déclencheur de réponse aux stories",
-        free: "1 flux actif",
         pro: "Illimité",
         agency: "Illimité",
       },
       {
         label: "Déclencheur de commentaire en direct",
-        free: "—",
         pro: "Inclus",
         agency: "Inclus",
       },
       {
         label: "Conversations IA multi-tours",
-        free: "—",
         pro: "Inclus",
         agency: "Inclus",
       },
       {
         label: "Actions « Demander »",
-        free: "—",
         pro: "Inclus",
         agency: "Inclus",
       },
       {
         label: "Conditions et branchements",
-        free: "—",
         pro: "Inclus",
         agency: "Inclus",
       },
       {
         label: "Groupes de contacts",
-        free: '« Tous les contacts » uniquement',
         pro: "Groupes personnalisés",
         agency: "Groupes personnalisés",
       },
       {
         label: "Filigrane sur les DM",
-        free: '« Sent via LightChats ⚡ »',
         pro: "Aucun",
         agency: "Aucun",
       },
     ],
     topupTitle: "Comment fonctionnent les recharges automatiques",
-    topupSub: "Un filet de sécurité pour les plans payants — jamais une surprise.",
+    topupSub: "Un filet de sécurité pour les mois chargés — jamais une surprise.",
     topupCapTitle: "Plafond configurable",
     topupCapBefore: "Le plafond par défaut est de ",
     topupCapBold: "2 prélèvements par mois",
@@ -614,9 +511,9 @@ export const pricing: Record<Lang, PricingContent> = {
     topupEmailTitle: "Reçu par e-mail",
     topupEmailDesc:
       "Vous recevez un e-mail à chaque recharge — montant, capacité ajoutée, carte utilisée et compteur actuel.",
-    topupFreeTitle: "Plan gratuit = aucun prélèvement",
-    topupFreeDesc:
-      "Atteindre la limite sur Free affiche une suggestion Pro, jamais un prélèvement.",
+    topupCapReachedTitle: "Plafond atteint ?",
+    topupCapReachedDesc:
+      "Une fois le plafond de recharge atteint, les réponses s'interrompent jusqu'au 1er — jamais de prélèvement au-delà.",
     topupNoCardTitle: "Pas de carte enregistrée ?",
     topupNoCardDesc:
       "Les réponses s'interrompent jusqu'au reset de votre quota mensuel le 1er.",
@@ -663,16 +560,20 @@ export const pricing: Record<Lang, PricingContent> = {
     faqTitle: "FAQ Tarifs",
     faqs: [
       {
+        q: "Existe-t-il un plan gratuit ou un essai ?",
+        a: "S'inscrire et construire ses automatisations est entièrement gratuit — sans carte, sans limite de temps. Vous ne choisissez une formule qu'au moment d'activer une automatisation ; la première facture est prélevée à la souscription, et vos automatisations démarrent aussitôt.",
+      },
+      {
         q: 'Qu\'est-ce qui compte comme « réponse IA » ?',
         a: "Tout commentaire ou DM sortant dont le texte est généré par l'IA. Les réponses statiques sont des modèles pré-écrits envoyés tels quels — beaucoup moins coûteux et avec des limites mensuelles bien plus élevées.",
       },
       {
         q: "Que se passe-t-il quand j'atteins ma limite ?",
-        a: "Sur Free, les réponses s'interrompent jusqu'au 1er du mois suivant et vous voyez une suggestion Pro — jamais de prélèvement surprise. Sur Pro et Business, si une carte est enregistrée et que vous n'avez pas atteint votre plafond de recharge, nous prélevons pour maintenir le service. Vous pouvez ajuster le plafond (ou le désactiver) dans Facturation.",
+        a: "Si une carte est enregistrée et que vous n'avez pas atteint votre plafond de recharge, nous prélevons une recharge pour maintenir le service. Vous pouvez ajuster le plafond (ou le désactiver) dans Facturation — une fois atteint, les réponses s'interrompent jusqu'au 1er. Jamais de surprise au-delà du plafond que vous fixez.",
       },
       {
         q: "Les réponses non utilisées sont-elles reportées ?",
-        a: "Non. Le quota mensuel de chaque plan se remet à zéro le 1er. Le bonus d'accueil de 7 jours est unique — il expire à la fin de la période d'essai, même s'il n'a pas été utilisé.",
+        a: "Non. Le quota mensuel de chaque plan se remet à zéro le 1er.",
       },
       {
         q: "Puis-je gérer plusieurs comptes Instagram avec un seul abonnement ?",
@@ -681,10 +582,6 @@ export const pricing: Record<Lang, PricingContent> = {
       {
         q: "Puis-je passer du mensuel à l'annuel en cours de période ?",
         a: "Oui — annulez et réabonnez-vous avec l'intervalle annuel. Votre période payée actuelle est honorée jusqu'à son terme.",
-      },
-      {
-        q: "Le plan Free met-il vraiment un filigrane sur chaque DM ?",
-        a: "Uniquement les DM automatisés envoyés via des flux ou des conversations IA. Les réponses manuelles que vous tapez vous-même depuis la boîte de réception LightChats ne sont jamais marquées, quel que soit le plan.",
       },
       {
         q: "Quelle est la politique d'annulation ?",
@@ -696,8 +593,9 @@ export const pricing: Record<Lang, PricingContent> = {
       },
     ],
     ctaTitle: "Commencez à automatiser en quelques minutes",
-    ctaSub: "Gratuit pour toujours. Aucune carte requise.",
-    ctaBtn: "Commencer gratuitement",
+    ctaSub:
+      "Inscrivez-vous et construisez gratuitement. Aucune carte requise avant l'activation.",
+    ctaBtn: "Commencer",
   },
   ar: {
     backToHome: "العودة إلى الرئيسية",
@@ -705,44 +603,11 @@ export const pricing: Record<Lang, PricingContent> = {
     titleA: "خطط بسيطة.",
     titleB: "بلا رسوم مفاجئة.",
     intro:
-      "ابدأ مجاناً بحصة حقيقية ومفيدة. ترقّ عندما تتجاوز أتمتاتك حدّها. الفوترة السنوية توفّر حتى 27٪.",
+      "سجّل وأنشئ أتمتاتك مجاناً — دون بطاقة. اختر باقة عندما تكون جاهزاً لتفعيلها. الفوترة السنوية توفّر حتى 27٪.",
     monthly: "شهري",
     annual: "سنوي",
     saveBadge: "وفّر 27٪",
     plans: [
-      {
-        name: "Free",
-        monthly: "$0",
-        annual: "$0",
-        desc: "جرّب LightChats بحصة فعلية مفيدة — بدون بطاقة.",
-        features: [
-          { text: "1,000 رد ثابت/شهر", type: "check", highlight: true },
-          { text: "150 رد بالذكاء الاصطناعي/شهر", type: "check" },
-          {
-            text: "مكافأة البداية: +150 ذكاء اصطناعي / +500 ثابت لأول 7 أيام",
-            type: "check",
-          },
-          { text: "رد تلقائي على التعليقات والرسائل", type: "check" },
-          { text: "تدفق رد على القصص واحد فعّال", type: "check" },
-          { text: "أتمتة تدفقات أساسية", type: "check" },
-          { text: "محفز التعليقات الفورية", type: "x" },
-          { text: "محادثات ذكاء اصطناعي متعددة الأدوار", type: "x" },
-          {
-            text: 'إجراءات "اطلب" (بريد إلكتروني/هاتف/عنوان)',
-            type: "x",
-          },
-          { text: "الشروط والتفرعات", type: "x" },
-          { text: "مجموعات جهات اتصال مخصصة", type: "x" },
-          {
-            text: 'توقيع "Sent via LightChats ⚡" على الرسائل المؤتمتة',
-            type: "x",
-          },
-        ],
-        cta: "ابدأ مجاناً",
-        ctaLink: "https://app.lightchats.com/signup",
-        highlight: false,
-        isFree: true,
-      },
       {
         name: "Pro",
         monthly: "$9",
@@ -753,7 +618,7 @@ export const pricing: Record<Lang, PricingContent> = {
           { text: "5,000 رد ثابت/شهر", type: "check", highlight: true },
           { text: "750 رد بالذكاء الاصطناعي/شهر", type: "check" },
           {
-            text: "إعادة شحن تلقائية بـ $4.90 → +250 ذكاء اصطناعي / +1,000 ثابت",
+            text: "إعادة شحن تلقائية بـ $4.90 → +250 ذكاء اصطناعي / +2,500 ثابت",
             type: "dollar",
           },
           {
@@ -770,8 +635,8 @@ export const pricing: Record<Lang, PricingContent> = {
           { text: "بدون علامة LightChats على الرسائل", type: "check" },
           { text: "إلغاء في أي وقت", type: "check" },
         ],
-        cta: "الترقية إلى Pro",
-        ctaLink: "https://app.lightchats.com/billing",
+        cta: "ابدأ مع Pro",
+        ctaLink: "https://app.lightchats.com/signup",
         highlight: true,
       },
       {
@@ -784,7 +649,7 @@ export const pricing: Record<Lang, PricingContent> = {
           { text: "20,000 رد ثابت/شهر", type: "check", highlight: true },
           { text: "5,000 رد بالذكاء الاصطناعي/شهر", type: "check" },
           {
-            text: "إعادة شحن تلقائية بـ $14.90 → +2,000 ذكاء اصطناعي / +8,000 ثابت",
+            text: "إعادة شحن تلقائية بـ $14.90 → +2,000 ذكاء اصطناعي / +10,000 ثابت",
             type: "dollar",
           },
           { text: "كل ما في باقة Pro", type: "check" },
@@ -796,7 +661,7 @@ export const pricing: Record<Lang, PricingContent> = {
           },
         ],
         cta: "اختر Business",
-        ctaLink: "https://app.lightchats.com/billing",
+        ctaLink: "https://app.lightchats.com/signup",
         highlight: false,
       },
     ],
@@ -812,92 +677,73 @@ export const pricing: Record<Lang, PricingContent> = {
     compareTitle: "مقارنة الباقات جنباً إلى جنب",
     compareSub: "كل ميزة وكل حد، دون أي ملاحظات صغيرة.",
     featureCol: "الميزة",
-    freeCol: "Free",
     proCol: "Pro",
     agencyCol: "Business",
     rows: [
-      { label: "السعر الشهري", free: "$0", pro: "$9", agency: "$29" },
+      { label: "السعر الشهري", pro: "$9", agency: "$29" },
       {
         label: "السعر السنوي",
-        free: "—",
         pro: "$79/سنة",
         agency: "$279/سنة",
       },
       {
         label: "الردود الثابتة / شهر",
-        free: "1,000",
         pro: "5,000",
         agency: "20,000",
       },
       {
         label: "ردود الذكاء الاصطناعي / شهر",
-        free: "150",
         pro: "750",
         agency: "5,000",
       },
       {
         label: "الشحن التلقائي",
-        free: "—",
-        pro: "$4.90 → +250 ذكاء اصطناعي / +1,000 ثابت",
-        agency: "$14.90 → +2,000 ذكاء اصطناعي / +8,000 ثابت",
-      },
-      {
-        label: "مكافأة البداية",
-        free: "+150 ذكاء اصطناعي / +500 ثابت (7 أيام)",
-        pro: "—",
-        agency: "—",
+        pro: "$4.90 → +250 ذكاء اصطناعي / +2,500 ثابت",
+        agency: "$14.90 → +2,000 ذكاء اصطناعي / +10,000 ثابت",
       },
       {
         label: "رد تلقائي على التعليقات والرسائل",
-        free: "مضمّن",
         pro: "مضمّن",
         agency: "مضمّن",
       },
       {
         label: "محفز الرد على القصص",
-        free: "تدفق واحد فعّال",
         pro: "غير محدود",
         agency: "غير محدود",
       },
       {
         label: "محفز التعليقات الفورية",
-        free: "—",
         pro: "مضمّن",
         agency: "مضمّن",
       },
       {
         label: "محادثات ذكاء اصطناعي متعددة الأدوار",
-        free: "—",
         pro: "مضمّن",
         agency: "مضمّن",
       },
       {
         label: 'إجراءات "اطلب"',
-        free: "—",
         pro: "مضمّن",
         agency: "مضمّن",
       },
       {
         label: "الشروط والتفرعات",
-        free: "—",
         pro: "مضمّن",
         agency: "مضمّن",
       },
       {
         label: "مجموعات جهات الاتصال",
-        free: '"كل جهات الاتصال" فقط',
         pro: "مجموعات مخصصة",
         agency: "مجموعات مخصصة",
       },
       {
         label: "علامة على الرسائل",
-        free: '"Sent via LightChats ⚡"',
         pro: "بدون",
         agency: "بدون",
       },
     ],
     topupTitle: "كيف تعمل إعادة الشحن التلقائية",
-    topupSub: "شبكة أمان للباقات المدفوعة — دون مفاجآت.",
+    topupSub: "شبكة أمان للأشهر المزدحمة — دون مفاجآت.",
     topupCapTitle: "حدّ قابل للتعديل",
     topupCapBefore: "الحدّ الافتراضي هو ",
     topupCapBold: "خصمَين شهرياً",
@@ -906,9 +752,9 @@ export const pricing: Record<Lang, PricingContent> = {
     topupEmailTitle: "إيصال بالبريد الإلكتروني",
     topupEmailDesc:
       "تصلك رسالة بريد إلكتروني عند كل عملية شحن — المبلغ والسعة المضافة والبطاقة المستخدمة والعدد الحالي.",
-    topupFreeTitle: "الباقة المجانية = بدون رسوم",
-    topupFreeDesc:
-      "الوصول إلى الحد في الباقة المجانية يعرض اقتراح Pro، دون أي رسوم.",
+    topupCapReachedTitle: "وصلت إلى الحد؟",
+    topupCapReachedDesc:
+      "عند بلوغ حد الشحن، تتوقف الردود حتى الأول من الشهر — دون أي خصم إضافي بعده.",
     topupNoCardTitle: "لا توجد بطاقة محفوظة؟",
     topupNoCardDesc:
       "تتوقف الردود حتى يُعاد تعيين حصتك الشهرية في الأول من الشهر.",
@@ -954,16 +800,20 @@ export const pricing: Record<Lang, PricingContent> = {
     faqTitle: "أسئلة شائعة عن الأسعار",
     faqs: [
       {
+        q: "هل توجد باقة مجانية أو فترة تجريبية؟",
+        a: "التسجيل وبناء الأتمتات مجاني تماماً — دون بطاقة ودون حد زمني. تختار الباقة فقط عندما تكون جاهزاً لتفعيل أتمتة؛ تُخصم الفاتورة الأولى عند الاشتراك، وتبدأ أتمتاتك بالعمل فوراً.",
+      },
+      {
         q: 'ما الذي يُحتسب "رد ذكاء اصطناعي"؟',
         a: "أي تعليق أو رسالة صادرة يكون نصّها مولَّداً بالذكاء الاصطناعي. أما الردود الثابتة فهي قوالب جاهزة تُرسل كما هي — أرخص بكثير وبحدود شهرية أعلى بكثير.",
       },
       {
         q: "ماذا يحدث عند الوصول إلى الحد؟",
-        a: "في الباقة المجانية، تتوقف الردود حتى أول الشهر التالي وتظهر لك ترقية إلى Pro — دون أي خصم مفاجئ. في باقتَي Pro وBusiness، إذا كانت لديك بطاقة محفوظة ولم تبلغ حد الشحن، نخصم تلقائياً لمواصلة العمل. يمكنك تعديل الحد (أو إيقافه) من صفحة الفواتير.",
+        a: "إذا كانت لديك بطاقة محفوظة ولم تبلغ حد الشحن، نخصم إعادة شحن لمواصلة العمل. يمكنك تعديل الحد (أو إيقافه) من صفحة الفواتير — وعند بلوغه تتوقف الردود حتى الأول من الشهر. لا مفاجآت تتجاوز الحد الذي حددته.",
       },
       {
         q: "هل تُرحَّل الردود غير المستخدمة؟",
-        a: "لا. تُعاد تعيين الحصة الشهرية لكل باقة في الأول من كل شهر. مكافأة البداية لسبعة أيام لمرة واحدة فقط — تنتهي بنهاية فترة التجربة حتى لو لم تُستخدم.",
+        a: "لا. تُعاد تعيين الحصة الشهرية لكل باقة في الأول من كل شهر.",
       },
       {
         q: "هل يمكنني تشغيل عدة حسابات إنستغرام باشتراك واحد؟",
@@ -972,10 +822,6 @@ export const pricing: Record<Lang, PricingContent> = {
       {
         q: "هل يمكنني التحويل من الشهري إلى السنوي خلال الفترة؟",
         a: "نعم — ألغِ الاشتراك ثم اشترك مجدداً بالفترة السنوية. تُحترم فترة الدفع الحالية حتى نهايتها.",
-      },
-      {
-        q: "هل يضع الباقة المجانية فعلاً علامة على كل رسالة؟",
-        a: "فقط على الرسائل المؤتمتة عبر تدفقات الأتمتة أو محادثات الذكاء الاصطناعي. الردود اليدوية التي تكتبها بنفسك من صندوق LightChats لا تحمل أي علامة، بغض النظر عن الباقة.",
       },
       {
         q: "ما سياسة الإلغاء؟",
@@ -987,7 +833,7 @@ export const pricing: Record<Lang, PricingContent> = {
       },
     ],
     ctaTitle: "ابدأ الأتمتة خلال دقائق",
-    ctaSub: "مجاني للأبد. لا حاجة لبطاقة ائتمان.",
-    ctaBtn: "ابدأ مجاناً",
+    ctaSub: "سجّل وأنشئ مجاناً. لا حاجة لبطاقة قبل التفعيل.",
+    ctaBtn: "ابدأ الآن",
   },
 };

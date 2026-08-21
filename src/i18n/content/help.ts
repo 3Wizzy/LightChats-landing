@@ -78,9 +78,9 @@ export const help: Record<Lang, HelpContent> = {
         desc: "Plans, top-ups, and how charges work.",
         articles: [
           {
-            title: "Free, Pro, and Business plans",
+            title: "Pro and Business plans",
             summary:
-              "Free: 150 AI / 1,000 static. Pro ($9/mo): 750 AI / 5,000 static. Business ($29/mo): 5,000 AI / 20,000 static. Annual billing saves up to 27%.",
+              "Pro ($9/mo or $79/yr): 750 AI / 5,000 static. Business ($29/mo or $279/yr): 5,000 AI / 20,000 static. Annual billing saves up to 27%. Building flows is free — you subscribe when you activate.",
           },
           {
             title: "Auto top-ups",
@@ -174,9 +174,9 @@ export const help: Record<Lang, HelpContent> = {
         desc: "Formules, recharges et fonctionnement des prélèvements.",
         articles: [
           {
-            title: "Formules Gratuit, Pro et Business",
+            title: "Formules Pro et Business",
             summary:
-              "Gratuit : 150 IA / 1 000 statiques. Pro (9 $/mois) : 750 IA / 5 000 statiques. Business (29 $/mois) : 5 000 IA / 20 000 statiques. La facturation annuelle permet d'économiser jusqu'à 27 %.",
+              "Pro (9 $/mois ou 79 $/an) : 750 IA / 5 000 statiques. Business (29 $/mois ou 279 $/an) : 5 000 IA / 20 000 statiques. Jusqu'à 27 % d'économies en annuel. Construire ses flux est gratuit — on s'abonne à l'activation.",
           },
           {
             title: "Recharges automatiques",
@@ -271,9 +271,9 @@ export const help: Record<Lang, HelpContent> = {
         desc: "الباقات وإعادة الشحن وكيفية احتساب الرسوم.",
         articles: [
           {
-            title: "باقات مجاني وPro وBusiness",
+            title: "باقتا Pro وBusiness",
             summary:
-              "مجاني: 150 ذكاء اصطناعي / 1,000 ثابت. Pro (9$/شهر): 750 ذكاء اصطناعي / 5,000 ثابت. Business (29$/شهر): 5,000 ذكاء اصطناعي / 20,000 ثابت. تتيح الفوترة السنوية توفيراً يصل إلى 27%.",
+              "Pro (9$/شهر أو 79$/سنة): 750 ذكاء اصطناعي / 5,000 ثابت. Business (29$/شهر أو 279$/سنة): 5,000 ذكاء اصطناعي / 20,000 ثابت. توفير يصل إلى 27٪ مع الفوترة السنوية. بناء التدفقات مجاني — تشترك عند التفعيل.",
           },
           {
             title: "إعادة الشحن التلقائية",

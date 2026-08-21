@@ -45,13 +45,8 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
     ],
     rows: [
       {
-        feature: "Free plan AI replies",
-        lightchats: "150 / month",
-        competitor: "Limited or unavailable",
-      },
-      {
-        feature: "Free plan static replies",
-        lightchats: "1,000 / month",
+        feature: "Monthly quota on entry plan",
+        lightchats: "750 AI + 5,000 static ($9 Pro)",
         competitor: "1,000 contacts (different metric)",
       },
       {
@@ -76,7 +71,7 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
       },
       {
         feature: "Story-reply trigger",
-        lightchats: "Free + paid",
+        lightchats: "All plans",
         competitor: "Paid only",
       },
       {
@@ -90,18 +85,18 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
         competitor: "Flat 30%, no lifetime",
       },
       {
-        feature: "DM watermark on Free plan",
-        lightchats: '"Sent via LightChats ⚡"',
-        competitor: "Branded reply on free",
+        feature: "DM watermark",
+        lightchats: "None",
+        competitor: "Branded reply on free plan",
       },
     ],
     featureColLabel: "Feature",
     competitorColLabel: "ManyChat",
     footnote:
       "Comparison reflects publicly listed plans as of 2026-04-26. ManyChat and the ManyChat logo are trademarks of their respective owners.",
-    ctaTitle: "Try it for free, no card",
+    ctaTitle: "Build your flows free, no card",
     ctaSub:
-      "See how LightChats handles your existing flows. Free plan ships with a real, useful quota.",
+      "See how LightChats handles your existing flows. Build for free — pay only when you activate.",
     ctaPrimary: "Get Started Free",
     ctaSecondary: "See all features",
   },
@@ -125,13 +120,8 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
     ],
     rows: [
       {
-        feature: "Réponses IA du plan gratuit",
-        lightchats: "150 / mois",
-        competitor: "Limitées ou indisponibles",
-      },
-      {
-        feature: "Réponses statiques du plan gratuit",
-        lightchats: "1 000 / mois",
+        feature: "Quota mensuel du plan d'entrée",
+        lightchats: "750 IA + 5 000 statiques (Pro à 9 $)",
         competitor: "1 000 contacts (métrique différente)",
       },
       {
@@ -156,7 +146,7 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
       },
       {
         feature: "Déclencheur de réponse aux stories",
-        lightchats: "Gratuit + payant",
+        lightchats: "Tous les plans",
         competitor: "Payant uniquement",
       },
       {
@@ -170,8 +160,8 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
         competitor: "30 % fixes, sans rémunération à vie",
       },
       {
-        feature: "Filigrane sur les DM du plan gratuit",
-        lightchats: '« Sent via LightChats ⚡ »',
+        feature: "Filigrane sur les DM",
+        lightchats: "Aucun",
         competitor: "Mention de marque sur le plan gratuit",
       },
     ],
@@ -179,9 +169,9 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
     competitorColLabel: "ManyChat",
     footnote:
       "Comparaison basée sur les plans publiés au 26/04/2026. ManyChat et le logo ManyChat sont des marques de leurs détenteurs respectifs.",
-    ctaTitle: "Essayez gratuitement, sans carte",
+    ctaTitle: "Construisez vos flux gratuitement, sans carte",
     ctaSub:
-      "Voyez comment LightChats gère vos flux existants. Le plan gratuit inclut un quota réellement utilisable.",
+      "Voyez comment LightChats gère vos flux existants. Construisez gratuitement — payez seulement à l'activation.",
     ctaPrimary: "Commencer gratuitement",
     ctaSecondary: "Voir toutes les fonctionnalités",
   },
@@ -205,13 +195,8 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
     ],
     rows: [
       {
-        feature: "ردود الذكاء الاصطناعي في الباقة المجانية",
-        lightchats: "150 / شهر",
-        competitor: "محدودة أو غير متاحة",
-      },
-      {
-        feature: "الردود الثابتة في الباقة المجانية",
-        lightchats: "1,000 / شهر",
+        feature: "الحصة الشهرية في باقة الدخول",
+        lightchats: "750 ذكاء اصطناعي + 5,000 ثابت (Pro بـ $9)",
         competitor: "1,000 جهة اتصال (وحدة قياس مختلفة)",
       },
       {
@@ -236,7 +221,7 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
       },
       {
         feature: "محفز الردّ على القصص",
-        lightchats: "مجاني + مدفوع",
+        lightchats: "جميع الباقات",
         competitor: "مدفوع فقط",
       },
       {
@@ -250,8 +235,8 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
         competitor: "30٪ ثابتة، دون عمولات مدى الحياة",
       },
       {
-        feature: "علامة على رسائل الباقة المجانية",
-        lightchats: '"Sent via LightChats ⚡"',
+        feature: "علامة على الرسائل",
+        lightchats: "بدون",
         competitor: "رد يحمل علامة المزوّد على الباقة المجانية",
       },
     ],
@@ -259,9 +244,9 @@ export const compareManychat: Record<Lang, CompareManychatContent> = {
     competitorColLabel: "ManyChat",
     footnote:
       "تعكس المقارنة الباقات المعلنة حتى 2026-04-26. ManyChat وشعار ManyChat علامتان تجاريتان لأصحابهما.",
-    ctaTitle: "جرّب مجاناً دون بطاقة",
+    ctaTitle: "أنشئ تدفقاتك مجاناً دون بطاقة",
     ctaSub:
-      "اكتشف كيف يتعامل LightChats مع تدفقاتك الحالية. تأتي الباقة المجانية بحصة فعلية مفيدة.",
+      "اكتشف كيف يتعامل LightChats مع تدفقاتك الحالية. أنشئ مجاناً — وادفع فقط عند التفعيل.",
     ctaPrimary: "ابدأ مجاناً",
     ctaSecondary: "عرض كل الميزات",
   },

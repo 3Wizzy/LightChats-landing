@@ -30,12 +30,45 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+/* ── Light theme ─────────────────────────────────────────────────────────
+   The whole site is written in dark-theme utility classes (text-white,
+   bg-surface-950, border-white/5 …). Tailwind v4 compiles every color to a
+   CSS variable, so flipping the theme = remapping the variables under a
+   `.light` class on <html> (toggled by ThemeToggle + a pre-paint script in
+   index.html). "white" becomes ink, and the surface scale inverts. */
+:root.light {
+  color-scheme: light;
+
+  --color-white: #171310;
+
+  --color-surface-50: #1c1917;
+  --color-surface-100: #292524;
+  --color-surface-200: #2b2521;
+  --color-surface-300: #443d38;
+  --color-surface-400: #5d554f;
+  --color-surface-500: #7d746d;
+  --color-surface-600: #a39a92;
+  --color-surface-700: #cfc7bf;
+  --color-surface-800: #ece7e2;
+  --color-surface-850: #f2eee9;
+  --color-surface-900: #f7f4f0;
+  --color-surface-950: #fdfcfa;
+}
+
+/* On brand-orange surfaces (CTA buttons, badges), "white" text must stay
+   truly white in light mode — the ink remap above would make it dark. */
+:root.light .bg-brand-500,
+:root.light .bg-brand-600 {
+  --color-white: #ffffff;
 }
 
 body {
   margin: 0;
   background-color: var(--color-surface-950);
-  color: white;
+  color: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -52,6 +85,11 @@ body {
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 100%);
   z-index: 0;
   pointer-events: none;
+}
+:root.light .bg-grid {
+  background-image:
+    linear-gradient(rgba(23,19,16,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23,19,16,0.05) 1px, transparent 1px);
 }
 
 /* ── Glowing orbs ── */
@@ -159,6 +197,12 @@ body {
     0 25px 80px rgba(0,0,0,0.5),
     0 0 60px rgba(233,77,30,0.08);
 }
+:root.light .phone-mockup {
+  box-shadow:
+    0 0 0 2px rgba(23,19,16,0.08),
+    0 25px 80px rgba(23,19,16,0.18),
+    0 0 60px rgba(233,77,30,0.08);
+}
 .phone-mockup::before {
   content: '';
   position: absolute;
@@ -182,6 +226,60 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ── Hero phone mockups ── */
+.hero-phones {
+  position: relative;
+  z-index: 1;
+  margin-top: 4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.hero-phone .phone-mockup {
+  width: 200px;
+}
+.hero-phone-center {
+  z-index: 2;
+}
+.hero-phone-center .phone-mockup {
+  width: 250px;
+  animation: heroPhoneFloat 6s ease-in-out infinite;
+}
+.hero-phone-left {
+  z-index: 1;
+  margin-right: -34px;
+  transform: rotate(-8deg) translateY(36px);
+}
+.hero-phone-left .phone-mockup {
+  animation: heroPhoneFloat 7s ease-in-out 0.6s infinite;
+}
+.hero-phone-right {
+  z-index: 1;
+  margin-left: -34px;
+  transform: rotate(8deg) translateY(36px);
+}
+.hero-phone-right .phone-mockup {
+  animation: heroPhoneFloat 8s ease-in-out 1.2s infinite;
+}
+@keyframes heroPhoneFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+@media (max-width: 768px) {
+  .hero-phones {
+    margin-top: 3rem;
+  }
+  .hero-phone-center .phone-mockup {
+    width: 200px;
+  }
+}
+/* Split-hero: phones sit beside the copy, no extra top gap */
+@media (min-width: 1024px) {
+  .hero-phones {
+    margin-top: 0;
+  }
 }
 
 /* ── General animations ── */

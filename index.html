@@ -32,6 +32,15 @@
     <link rel="icon" type="image/png" href="/svg-4.png" />
     <link rel="apple-touch-icon" href="/svg-4.png" />
 
+    <!-- Theme: apply saved light mode before first paint (default is dark) -->
+    <script>
+      try {
+        if (localStorage.getItem("lc_theme") === "light") {
+          document.documentElement.classList.add("light");
+        }
+      } catch (e) { /* ignore */ }
+    </script>
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -93,12 +102,6 @@
           "offers": [
             {
               "@type": "Offer",
-              "name": "Free",
-              "price": "0",
-              "priceCurrency": "USD"
-            },
-            {
-              "@type": "Offer",
               "name": "Pro",
               "price": "9",
               "priceCurrency": "USD",
@@ -106,7 +109,7 @@
             },
             {
               "@type": "Offer",
-              "name": "Agency",
+              "name": "Business",
               "price": "29",
               "priceCurrency": "USD",
               "url": "https://lightchats.com/pricing"

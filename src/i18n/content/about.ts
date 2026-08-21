@@ -52,7 +52,7 @@ export const about: Record<Lang, AboutContent> = {
       },
       {
         title: "Honest pricing",
-        desc: "Free is genuinely free. Paid plans are flat-rate, with capped opt-in top-ups. No per-message metering, no surprise overages.",
+        desc: "Building your flows is genuinely free. Plans are flat-rate, with capped opt-in top-ups. No per-message metering, no surprise overages.",
       },
       {
         title: "Build for the long game",
@@ -89,7 +89,7 @@ export const about: Record<Lang, AboutContent> = {
       },
       {
         title: "Tarification honnête",
-        desc: "Le gratuit est vraiment gratuit. Les plans payants sont à prix fixe, avec des recharges plafonnées et optionnelles. Pas de facturation au message, pas de mauvaises surprises.",
+        desc: "Construire ses flux est vraiment gratuit. Les plans sont à prix fixe, avec des recharges plafonnées et optionnelles. Pas de facturation au message, pas de mauvaises surprises.",
       },
       {
         title: "Penser long terme",
@@ -126,7 +126,7 @@ export const about: Record<Lang, AboutContent> = {
       },
       {
         title: "تسعير صادق",
-        desc: "المجاني مجاني فعلاً. الباقات المدفوعة بسعر ثابت، مع إعادة شحن اختيارية ومُحدّدة. لا فوترة لكل رسالة ولا فواتير مفاجئة.",
+        desc: "بناء التدفقات مجاني فعلاً. الباقات بسعر ثابت، مع إعادة شحن اختيارية ومُحدّدة. لا فوترة لكل رسالة ولا فواتير مفاجئة.",
       },
       {
         title: "بناء للمدى الطويل",

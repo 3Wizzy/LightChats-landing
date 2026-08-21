@@ -34,7 +34,7 @@ export const routeMeta: Record<Lang, Record<string, RouteMeta>> = {
     "/pricing": {
       title: "Pricing — LightChats",
       description:
-        "Simple, transparent pricing for LightChats. Free, Pro ($9/mo) and Business ($29/mo) plans, with auto top-ups, annual savings up to 27%, and a 30% recurring affiliate program.",
+        "Simple, transparent pricing for LightChats. Pro ($9/mo) and Business ($29/mo) plans, with auto top-ups, annual savings up to 27%, and a 30% recurring affiliate program.",
       breadcrumbLabel: "Pricing",
     },
     "/data-deletion": {
@@ -137,7 +137,7 @@ export const routeMeta: Record<Lang, Record<string, RouteMeta>> = {
     "/pricing": {
       title: "Tarifs — LightChats",
       description:
-        "Tarification simple et transparente. Forfaits Gratuit, Pro (9 $/mois) et Business (29 $/mois), recharges automatiques, jusqu'à 27 % d'économies en annuel et un programme d'affiliation à 30 % récurrent.",
+        "Tarification simple et transparente. Forfaits Pro (9 $/mois) et Business (29 $/mois), recharges automatiques, jusqu'à 27 % d'économies en annuel et un programme d'affiliation à 30 % récurrent.",
       breadcrumbLabel: "Tarifs",
     },
     "/data-deletion": {
@@ -240,7 +240,7 @@ export const routeMeta: Record<Lang, Record<string, RouteMeta>> = {
     "/pricing": {
       title: "الأسعار — LightChats",
       description:
-        "تسعير بسيط وشفاف من LightChats. باقات مجانية وPro (9$/شهر) وBusiness (29$/شهر) مع إعادة شحن تلقائية، توفير سنوي يصل إلى 27٪، وبرنامج إحالة بنسبة 30٪ متكرر.",
+        "تسعير بسيط وشفاف من LightChats. باقتا Pro (9$/شهر) وBusiness (29$/شهر) مع إعادة شحن تلقائية، توفير سنوي يصل إلى 27٪، وبرنامج إحالة بنسبة 30٪ متكرر.",
       breadcrumbLabel: "الأسعار",
     },
     "/data-deletion": {

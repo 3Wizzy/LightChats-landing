@@ -59,7 +59,7 @@ export const blogAnnouncing: Record<Lang, BlogAnnouncingContent> = {
         a: "AI replies and AI conversations powered by Claude, with strict safety guardrails and per-contact kill switches",
       },
       {
-        a: "Three plans: Free (150 AI replies + 1,000 static), ",
+        a: "Two plans: ",
         plansLink: "Pro at $9/mo",
         b: ", and Business at $29/mo",
       },
@@ -109,7 +109,7 @@ export const blogAnnouncing: Record<Lang, BlogAnnouncingContent> = {
         a: "Des réponses et des conversations IA propulsées par Claude, avec des garde-fous stricts et un bouton d'arrêt par contact",
       },
       {
-        a: "Trois plans : Gratuit (150 réponses IA + 1 000 statiques), ",
+        a: "Deux plans : ",
         plansLink: "Pro à 9 $/mois",
         b: " et Business à 29 $/mois",
       },
@@ -159,7 +159,7 @@ export const blogAnnouncing: Record<Lang, BlogAnnouncingContent> = {
         a: "ردود ومحادثات بالذكاء الاصطناعي مدعومة بـ Claude، مع ضوابط أمان صارمة وزرّ إيقاف لكل جهة اتصال",
       },
       {
-        a: "ثلاث باقات: مجانية (150 رداً بالذكاء الاصطناعي + 1,000 رد ثابت)، ",
+        a: "باقتان: ",
         plansLink: "احترافية بـ 9$/شهر",
         b: "، وBusiness بـ 29$/شهر",
       },

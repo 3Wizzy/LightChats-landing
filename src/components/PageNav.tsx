@@ -3,6 +3,7 @@ import logo from "../assets/logo.png";
 import { useLang } from "../i18n/LanguageContext";
 import { common } from "../i18n/common";
 import LanguageSwitcher from "../i18n/LanguageSwitcher";
+import ThemeToggle from "./ThemeToggle";
 
 export default function PageNav() {
   const { lang } = useLang();
@@ -33,6 +34,7 @@ export default function PageNav() {
           >
             {t.blog}
           </Link>
+          <ThemeToggle />
           <LanguageSwitcher variant="nav" />
           <a
             href="https://app.lightchats.com/signup"

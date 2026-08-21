@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "./i18n/LangLink";
 import logo from "./assets/logo.png";
 import Footer from "./components/Footer";
+import ThemeToggle from "./components/ThemeToggle";
 import { useLang } from "./i18n/LanguageContext";
 import { common } from "./i18n/common";
 import { home } from "./i18n/content/home";
@@ -62,33 +63,25 @@ function App() {
 
   const pricingPlans = [
     {
-      name: h.pricingFree,
-      price: h.pricingFree,
-      period: "",
-      desc: h.pricingFreeDesc,
-      features: h.pricingFreeBullets,
-      cta: h.pricingFreeCta,
-      ctaLink: "https://app.lightchats.com/signup",
-      highlight: false,
-    },
-    {
       name: h.pricingPro,
-      price: "$9.00",
+      price: "$9",
       period: h.perMonth,
+      annual: h.pricingProAnnual,
       desc: h.pricingProDesc,
       features: h.pricingProBullets,
       cta: h.pricingProCta,
-      ctaLink: "https://app.lightchats.com/billing",
+      ctaLink: "https://app.lightchats.com/signup",
       highlight: true,
     },
     {
       name: h.pricingAgency,
-      price: "$29.00",
+      price: "$29",
       period: h.perMonth,
+      annual: h.pricingAgencyAnnual,
       desc: h.pricingAgencyDesc,
       features: h.pricingAgencyBullets,
       cta: h.pricingAgencyCta,
-      ctaLink: "https://app.lightchats.com/billing",
+      ctaLink: "https://app.lightchats.com/signup",
       highlight: false,
     },
   ];
@@ -144,6 +137,7 @@ function App() {
             </a>
           </div>
           <div className="hidden md:flex items-center gap-3">
+            <ThemeToggle />
             <LanguageSwitcher variant="nav" />
             <a
               href={APP_URL}
@@ -227,7 +221,8 @@ function App() {
             >
               {t.faq}
             </a>
-            <div className="pt-2">
+            <div className="pt-2 flex items-center gap-3">
+              <ThemeToggle />
               <LanguageSwitcher variant="nav" />
             </div>
             <a
@@ -246,7 +241,10 @@ function App() {
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-brand-500/10 rounded-full blur-[128px] pointer-events-none" />
 
-        <div className="relative max-w-5xl mx-auto px-6 text-center">
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          {/* Left — copy */}
+          <div className="text-center lg:text-start">
           <div className="animate-fade-in-up inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-sm text-surface-300 mb-8">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
@@ -255,7 +253,7 @@ function App() {
             {t.beta}
           </div>
 
-          <h1 className="animate-fade-in-up animation-delay-200 text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.08] mb-6">
+          <h1 className="animate-fade-in-up animation-delay-200 text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight leading-[1.08] mb-6">
             {t.heroTitleA}
             <br />
             <span className="bg-gradient-to-r from-brand-400 via-brand-500 to-brand-600 bg-clip-text text-transparent">
@@ -263,11 +261,11 @@ function App() {
             </span>
           </h1>
 
-          <p className="animate-fade-in-up animation-delay-400 text-lg md:text-xl text-surface-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="animate-fade-in-up animation-delay-400 text-lg md:text-xl text-surface-400 max-w-2xl mx-auto lg:mx-0 mb-10 leading-relaxed">
             {t.heroSub}
           </p>
 
-          <div className="animate-fade-in-up animation-delay-600 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="animate-fade-in-up animation-delay-600 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
             <a
               href={APP_URL}
               target="_blank"
@@ -309,10 +307,26 @@ function App() {
               </svg>
             </a>
           </div>
+          </div>
 
-          <ChatBubbles bubbles={[h.bubble1, h.bubble2, h.bubble3, h.bubble4, h.bubble5]} />
+          {/* Right — floating phone mockups, above the fold */}
+          <div className="relative">
+            <ChatBubbles bubbles={[h.bubble1, h.bubble2, h.bubble3, h.bubble4, h.bubble5]} />
+            <div className="hero-phones animate-fade-in-up animation-delay-400">
+              <div className="hero-phone hero-phone-left hidden md:block">
+                <PhoneMockup videoSrc="https://mccdn.me/martcdn/next-lp/contents/home-redesign/features_03v3.mp4" />
+              </div>
+              <div className="hero-phone hero-phone-center">
+                <PhoneMockup videoSrc="https://mccdn.me/martcdn/next-lp/contents/home-redesign/features_01v3.mp4" />
+              </div>
+              <div className="hero-phone hero-phone-right hidden md:block">
+                <PhoneMockup videoSrc="https://mccdn.me/martcdn/next-lp/contents/home-redesign/features_04v3.mp4" />
+              </div>
+            </div>
+          </div>
+          </div>
 
-          <div className="mt-16 md:mt-24 flex flex-wrap justify-center gap-8 md:gap-16 animate-fade-in-up animation-delay-800">
+          <div className="mt-16 md:mt-20 flex flex-wrap justify-center gap-8 md:gap-16 animate-fade-in-up animation-delay-800">
             {[
               { value: "10K+", label: t.statsMessages },
               { value: "500+", label: t.statsBusinesses },
@@ -555,7 +569,7 @@ function App() {
             </div>
           </RevealSection>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {pricingPlans.map((plan) => (
               <RevealSection key={plan.name}>
                 <div
@@ -583,6 +597,9 @@ function App() {
                         {plan.period}
                       </span>
                     )}
+                    <p className="text-surface-500 text-sm mt-1.5">
+                      {plan.annual}
+                    </p>
                   </div>
                   <ul className="space-y-3 mb-8">
                     {plan.features.map((f) => (
@@ -885,7 +902,7 @@ function ChatBubbles({ bubbles }: { bubbles: string[] }) {
   ];
 
   return (
-    <div className="hidden lg:block absolute inset-0 pointer-events-none">
+    <div className="hidden lg:block absolute inset-0 pointer-events-none z-10">
       {positions.map((bubble, i) => (
         <div
           key={i}
