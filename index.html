@@ -143,12 +143,34 @@
       gtag('js', new Date());
       gtag('config', 'G-5CER0Z2EGF');
     </script>
+
+    <!-- Meta Pixel — same pixel ID as the app (VITE_FB_PIXEL_ID there), so the
+         _fbp/_fbc cookies it sets on .lightchats.com carry ad attribution into
+         app.lightchats.com signups. Inert until the placeholder is replaced.
+         NOTE: do not also add a Meta Pixel tag in GTM — events would double-fire. -->
+    <script>
+      (function () {
+        var PIXEL_ID = '2389409261802181';
+        if (!/^\d+$/.test(PIXEL_ID) || location.hostname === 'localhost') return;
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', PIXEL_ID);
+        fbq('track', 'PageView');
+      })();
+    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P765VMDR"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <!-- Meta Pixel (noscript) -->
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=2389409261802181&ev=PageView&noscript=1"
+    /></noscript>
     <!-- Language redirect (only on default-English URLs, only on first visit, only for fr/ar speakers) -->
     <script>
       (function () {

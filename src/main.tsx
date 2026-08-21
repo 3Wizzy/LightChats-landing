@@ -3,6 +3,7 @@ import { hydrateRoot, createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import { LanguageProvider } from './i18n/LanguageContext'
+import FbPixelRouteTracker from './FbPixelRouteTracker'
 import { BASE_PATHS } from './i18n/routes'
 import App from './App.tsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx'
@@ -60,6 +61,7 @@ function buildRoutes() {
 const app = (
   <StrictMode>
     <BrowserRouter>
+      <FbPixelRouteTracker />
       <LanguageProvider>
         <Routes>{buildRoutes()}</Routes>
       </LanguageProvider>
